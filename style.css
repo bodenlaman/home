@@ -19,7 +19,7 @@ img {
 }
 
 body {
-	font-family: "SFProBold";
+font-family: "SFProBold", sans-serif;
 	font-size: 16px;
 	color: #333;
 }
