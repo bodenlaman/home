@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "SFProBold";
-	src: url("assets/SFProDisplayBold.otf")
-		}
+	src: url("/assets/SFProBold.otf")
+}
 html {
   height: 100%;
   width: 100%;
