@@ -1,7 +1,13 @@
+@font-face {
+	font-family: "SFProBold";
+	src: url("assets/SFProDisplayBold.otf"
+		}
+
 html {
   height: 100%;
   width: 100%;
   background-color: #F5F5F7;
+font-family: "SFProBold", sans-serif;
 }
 * {
 	box-sizing: border-box;
