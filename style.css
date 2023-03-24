@@ -73,6 +73,11 @@ table {
      justify-content: center;
 }
 
+#photoCover {
+height: 100%;
+width: 100%;
+}
+
 #logoBanner {
   position: relative;
   z-index: 2;
