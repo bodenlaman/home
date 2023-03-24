@@ -65,4 +65,6 @@ video {
 }
 
 @font-face { font-family: SFPro; src: url('assets/SFProDisplayBold.otf'); } 
-.SFPro { font-family: SFPro;}
+p { 
+	font-family: SFPro;
+}
