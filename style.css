@@ -20,7 +20,6 @@ img {
 }
 
 body {
-	font-family: Arial, sans-serif;
 	font-size: 16px;
 	color: #333;
 }
@@ -68,9 +67,4 @@ video {
 #logoBanner {
   position: relative;
   z-index: 2;
-}
-
-@font-face { font-family: SFPro; src: url('assets/SFProDisplayBold.otf'); } 
-p { 
-	font-family: SFPro;
 }
