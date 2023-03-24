@@ -64,6 +64,15 @@ video {
   object-fit: cover;
 }
 
+table {
+  width: 100%;
+}
+
+.featuredPhotos {
+    display: flex;
+     justify-content: center;
+}
+
 #logoBanner {
   position: relative;
   z-index: 2;
