@@ -63,3 +63,6 @@ video {
   position: relative;
   z-index: 2;
 }
+
+@font-face { font-family: SFPro; src: url('assets/SFProDisplayBold.otf'); } 
+.SFPro { font-family: SFPro;}
