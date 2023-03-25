@@ -65,20 +65,29 @@ video {
 }
 
 table {
-  width: 100%;
+
 }
 
 .featuredPhotos {
     display: flex;
      justify-content: center;
+
 }
 
 #photoCover {
 height: 100%;
 width: 100%;
+
 }
 
 #logoBanner {
   position: relative;
   z-index: 2;
+}
+
+table {
+    border: 0px;
+        padding:0;
+        margin:0;
+        border-collapse: collapse;
 }
