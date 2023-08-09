@@ -13,7 +13,7 @@ function resizeIframe() {
     const maxHeight = 800; // Set your desired maximum width here
 
     const newHeight = Math.min(screenHeight, maxHeight);
-    iframe.style.Height = newHeight + 'px';
+    iframe.style.Height = newHeight + 100 + 'px';
 }
 
 // Call the function when the window is resized
