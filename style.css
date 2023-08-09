@@ -244,3 +244,13 @@ font-style:normal;
   width: 20%;
   height: 20%
 }
+
+  /* styles.css */
+#iframe-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#iframe-container iframe {
+    width: 100%;
+}
