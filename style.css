@@ -198,8 +198,8 @@ font-style:normal;
     flex-direction: column;
   }
   .column2 {
-    flex: 50%;
-    max-width: 50%;
+    flex: 25%;
+    max-width: 25%;
   }
   .videoInfo {
     flex-direction: column; /* Change the flex direction to column */
