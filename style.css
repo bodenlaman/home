@@ -181,8 +181,8 @@ font-style:normal;
 
 /* Create four equal columns that sits next to each other */
 .column2 {
-  flex: 50%;
-  max-width: 50%;
+  flex: 25%;
+  max-width: 25%;
   padding: 0 4px;
 }
 
@@ -198,8 +198,8 @@ font-style:normal;
     flex-direction: column;
   }
   .column2 {
-    flex: 25%;
-    max-width: 25%;
+    flex: 50%;
+    max-width: 50%;
   }
   .videoInfo {
     flex-direction: column; /* Change the flex direction to column */
