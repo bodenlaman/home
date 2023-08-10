@@ -208,7 +208,7 @@ font-style:normal;
 }
 
 /* Responsive layout - when the screen is less than 500px wide (iP8+), make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 500px) {
   .navbar a {
     float: none;
     width: 100%;
@@ -224,7 +224,7 @@ font-style:normal;
 }
 
 .grid-container {
-    padding: 100px, 10px 10px, 10px;
+    padding: 10px, 10px 10px, 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
