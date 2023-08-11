@@ -181,9 +181,10 @@ font-style:normal;
 
 /* Create four equal columns that sits next to each other */
 .column2 {
+  -ms-flex: 25%; /* IE10 */
   flex: 25%;
-  max-width: 25%;
-  padding: 0 4px 4px;
+  max-width: 35%;
+  padding: 0 4px;
 }
 
 .column2 img {
