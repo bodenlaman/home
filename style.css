@@ -49,9 +49,8 @@
   box-sizing: border-box;
   font-family:'Segoe UI Regular',Arial,sans-serif;
 }
-img {
-    width: 100%;
-}
+
+
 
 
 /* Style the body */
@@ -141,6 +140,10 @@ font-style:normal;
 
 .main h5 {
   text-align: center;
+}
+
+img {
+    width: 100%;
 }
 
 /* Fake image, just for this example */
@@ -253,5 +256,9 @@ font-style:normal;
 }
 
 .iframe-container iframe {
+    width: 100%;
+}
+/* Stylize obnoxious images*/
+.stylized-photo {
     width: 100%;
 }
