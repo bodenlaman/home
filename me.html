@@ -11,15 +11,14 @@
     <a href = "assets/portfolio.pdf" download = "Boden Laman Portfolio High Quality">Click here to download the high quality portfolio PDF</a>
 </div>
 
-<div class="navbar">
-  <a href="index.html">
-    <img src="assets/Logo.png" style="height: 60px; width: 90%; display: block;">
-  </a>
-  <a href="photography.html">Photography</a>
-  <a href="videography.html">Videography</a>
-  <a href="safebite.html"> <img src="assets/saferbite.png" style="width: 50px"> <p> SafeBite (Preview) </p> </a>
-  <a href="me.html" class="right">About Me &amp; Contact</a>
-</div>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+</script>
 
 
 
@@ -29,8 +28,8 @@
     <a href="https://sites.google.com/view/boden-laman/home?authuser=0"><h3>Looking for my old website? Click Here!</h3></a>
 <h3 class="videoFeatures">I'm currently a Senior in High school, <br> looking to study computer science, media and design in college. </h3>
 
-    <div class="fakeimg">
-<div class="videoInfo" style="display: block;">
+    <div  >
+<div class="mainSection" style="display: block;">
    - Instagram: @boden.laman <br> - Email: bodenlaman[ZERO]6@gmail.com <br> GitHub: bodenlaman
 </div>
   </div>
