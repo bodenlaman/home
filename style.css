@@ -45,7 +45,6 @@
 
 }
 
-
 * {
   box-sizing: border-box;
   font-family:'Segoe UI Regular',Arial,sans-serif;
@@ -116,6 +115,9 @@ font-style:normal;
   display: flex;
   flex-wrap: wrap;
 }
+.videoFeatures {
+  padding: 20px;
+}
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
@@ -145,6 +147,12 @@ img {
     width: 100%;
 }
 
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #151517;
+  width: 100%;
+  padding: 20px;
+}
 .fa {
   text-align: center;
   padding: 20px;
@@ -198,7 +206,7 @@ img {
     flex: 50%;
     max-width: 50%;
   }
-  .mainSection {
+  .videoInfo {
     flex-direction: column; /* Change the flex direction to column */
     text-align: center; /* Center-align the text when it moves under the image */
   }
@@ -214,7 +222,7 @@ img {
     flex: 100%;
     max-width: 100%;
   }
-  .mainSection {
+  .videoInfo {
     flex-direction: column; /* Change the flex direction to column */
     text-align: center; /* Center-align the text when it moves under the image */
   }
@@ -226,7 +234,7 @@ img {
     grid-template-columns: repeat(3, 1fr);
   }
 
-.mainSection {
+.videoInfo {
   display: flex;
   align-items: center;
 }
