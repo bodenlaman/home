@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Boden Laman - Athletic Videos, Photography & more</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="header">
+  <a class=banner href="safebite.html"><p>SafeBite - Preview</p> </a>
+</div>
+
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+</script>
+
+<div class="row">
+<div>
+    <img class="stylized-photo" src="assets/banner2.png" >
+        <img class="stylized-photo" src="assets/Banner1.png" >
+            <img class="stylized-photo" src="assets/splash.png">
+
+</div>
+  </div>
+</body>
+</html>
