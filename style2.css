@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header/logo Title */
+.header {
+    height: 40px;
+    padding: 4px; /* Converted from 1px to keep spacing readable */
+    text-align: center;
+    background: #0070df;
+    color: #cccccc;
+}
+
+/* Increase the font size of the heading */
+.header p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #161617;
+    max-width: 100%;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    align-items: center;
+    display: flex;
+    color: #cccccc;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    height: 82px;
+}
+
+.navbar img {
+    padding: 4px;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    color: #ffffff;
+}
+
+.featured {
+    width: 100%;
+    text-align: center;
+    background: #000000;
+}
+
+.featured h3, h1, h3, h4, h5, h6, p {
+    padding: 10px;
+    
+}
+
+.featured-image {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+}
+
+.grid {
+    display: flex;
+   flex-wrap: wrap;
+    justify-content: space-around;  
+}
+
+.card {
+    background: #e4e4e4;
+    padding: 12px; /* Adjusted for better readability */
+    text-align: center;
+    flex: 1 1 calc(50% - 32px); /* 50% width minus the gap */
+}
+
+.card img {
+    max-width: 100%;
+    height: 500px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.card h1, h2, h3 {
+    padding: 10px;
+    color:#000000
+}
+
+.cardDark {
+    background-color:#000000
+}
+
+.cardDark h1, h2, h3 {
+    color:#ffffff
+}
+
+
+footer {
+    text-align: center;
+    padding: 16px; /* Converted from 1em */
+    background: #333;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
