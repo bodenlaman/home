@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style2.css">
+<title>Boden Laman - Athletic Videos, Photography & more</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      });
+  </script>
+
+</head>
+<div id="navbar-placeholder"></div>
+<body>
+    <main class="content">
+        <section class="featured">
+            <h1>BodenDotNet</h1>
+            <h3>Learn More | Apps</h3>
+            <img src="/assets/featuredBanner.png" alt="Image" class="featured-image">
+        </section>
+        <section class="grid">
+            <div class="card">
+                <h1>Sports Videography</h1>
+                <h3>Looking to purchase a highlight video? | Learn More</h3>
+                <iframe width=75% height="315" src="https://www.youtube-nocookie.com/embed/p5EdIyL_1Mw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width=75% height="315" src="https://www.youtube.com/embed/vZDtmEMGGlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="card cardDark">
+                <h1>SafeBite | ---</h1>
+                <img src="image2.jpg" alt="Item 2">
+            </div>
+            <div class="card">
+                <h1>SnapSweeper | Swipe for Good</h1>
+                <h3>Learn more</h3>
+                <img src="assets/SnapSweeperAssets/PhoneBanner.png" alt="Item 3">
+            </div>
+        </section>
+    </main>
+    <footer>
+        Footer
+    </footer>
+</body>
+</html>

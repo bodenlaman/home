@@ -115,7 +115,8 @@ font-style:normal;
   display: flex;
   flex-wrap: wrap;
 }
-.videoFeatures {
+
+.textDescription {
   padding: 20px;
 }
 
@@ -148,26 +149,11 @@ img {
 }
 
 /* Fake image, just for this example */
-.fakeimg {
+.bannerPadding {
   background-color: #151517;
   width: 100%;
   padding: 20px;
 }
-.fa {
-  text-align: center;
-  padding: 20px;
-  font-size: 30px;
-  width: 100px;
-  height: 100px;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-.fa-instagram {
-  background: #125688;
-  color: white;
-}
-
 
 /* Footer */
 .footer {
@@ -181,6 +167,16 @@ img {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+}
+
+.horizontalBanner {
+  display: flex; /* Makes the container a flex container */
+  align-items: center; /* Vertically aligns items */
+  justify-content: start; /* Aligns items horizontally to the start (left) */
+  gap: 10px; /* Adds spacing between the items */
+  height: 50px; /* Adjust the size of the image */
+  width: auto; /* Maintains aspect ratio */
+
 }
 
 /* Create four equal columns that sits next to each other */

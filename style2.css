@@ -64,7 +64,7 @@ body {
 
 .featured h3, h1, h3, h4, h5, h6, p {
     padding: 10px;
-    
+    color: #ffffff;
 }
 
 .featured-image {
@@ -94,7 +94,7 @@ body {
     padding: 10px;
 }
 
-.card h1, h2, h3 {
+.card h3, h1 {
     padding: 10px;
     color:#000000
 }
