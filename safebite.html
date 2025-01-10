@@ -13,15 +13,15 @@
   <a class=banner href="safebite.html"><p>SafeBite - Preview</p> </a>
 </div>
 
-<div class="navbar">
-  <a href="index.html">
-    <img src="assets/Logo.png" style="height: 60px; width: 90%; display: block;">
-  </a>
-  <a href="photography.html">Photography</a>
-  <a href="videography.html">Videography</a>
-  <a href="safebite.html"> <img src="assets/saferbite.png" style="width: 50px"> <p> SafeBite (Preview) </p> </a>
-  <a href="me.html" class="right">About Me & Contact</a>
-</div>
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+</script>
 
 <div class="row">
 <div>
