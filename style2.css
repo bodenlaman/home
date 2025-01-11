@@ -62,9 +62,16 @@ body {
     background: #000000;
 }
 
-.featured h3, h1, h3, h4, h5, h6, p {
+.featured h1, h2, h3, p {
     padding: 10px;
     color: #ffffff;
+}
+
+.featured a {
+    padding: 10px;
+    color: #0088ff;
+    text-decoration: none;
+
 }
 
 .featured-image {
@@ -80,31 +87,56 @@ body {
     justify-content: space-around;  
 }
 
-.card {
-    background: #e4e4e4;
-    padding: 12px; /* Adjusted for better readability */
+.card, .cardDark {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    aspect-ratio: 1 / 1; /* Enforces a square shape */
+    width: calc(50% - 32px); /* Adjust width as needed */
+    background-color: #000000; /* For .cardDark */
+    padding: 12px;
     text-align: center;
-    flex: 1 1 calc(50% - 32px); /* 50% width minus the gap */
 }
 
-.card img {
+.card img, .cardDark img {
     max-width: 100%;
-    height: 500px;
+    max-height: 90%;
+    object-fit: cover; /* Ensures the image scales proportionally */
     border-radius: 4px;
-    padding: 10px;
 }
 
-.card h3, h1 {
+.card {
+    background: #ffffff;
+}
+
+
+.card h1, h3, p {
     padding: 10px;
-    color:#000000
+    color: #000000;
+}
+
+.card a {
+    color: #0088ff;
+    text-decoration: none;
 }
 
 .cardDark {
-    background-color:#000000
+    text-align: center;
+    flex: 1 1 calc(50% - 32px); /* 50% width minus the gap */
+    background-color:#000000;
+
 }
 
 .cardDark h1, h2, h3 {
-    color:#ffffff
+    padding: 10px;
+   color:#ffffff;
+}
+
+.cardDark a {
+    padding: 10px;
+    color:#0088ff;
+    text-decoration: none;
 }
 
 
@@ -120,8 +152,9 @@ footer {
         flex-direction: column;
     }
 
-    .card {
+    .card, .cardDark {
         flex: 1 1 100%;
-        max-width: 100%;
+        width: 100%; /* Full width for mobile */
+        aspect-ratio: 1 / 1; /* Ensures square shape */
     }
 }
