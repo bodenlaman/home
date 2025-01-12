@@ -82,9 +82,8 @@ body {
 }
 
 .grid {
-    display: flex;
-   flex-wrap: wrap;
-    justify-content: space-around;  
+    display: grid; /* Use grid for easier 2-column layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
 }
 
 .card, .cardDark {
@@ -92,12 +91,11 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    aspect-ratio: 1 / 1; /* Enforces a square shape */
-    width: calc(50% - 32px); /* Adjust width as needed */
-    background-color: #000000; /* For .cardDark */
-    padding: 12px;
+    aspect-ratio: 1 / 1;
+    background-color: #000000;
     text-align: center;
 }
+
 
 .card img, .cardDark img {
     max-width: 100%;
@@ -149,19 +147,6 @@ footer {
 
 @media screen and (max-width: 768px) {
     .grid {
-        flex-direction: column;
-    }
-
-    .card, .cardDark {
-        flex: 1 1 100%;
-        width: 100%; /* Full width for mobile */
-        aspect-ratio: 1 / 1; /* Ensures square shape */
-    }
-
-    .card img, .cardDark img {
-        max-width: 100%;
-    max-height: 90%;
-    object-fit: cover; /* Ensures the image scales proportionally */
-    border-radius: 4px;
+        grid-template-columns: 1fr; /* One column on smaller screens */
     }
 }
