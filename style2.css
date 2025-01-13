@@ -84,7 +84,7 @@ body {
 .grid {
     display: grid; /* Use grid for easier 2-column layout */
     grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-    padding: 10px;
+
     gap: 10px;
 }
 
