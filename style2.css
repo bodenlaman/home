@@ -82,10 +82,12 @@ body {
 }
 
 .grid {
-    display: grid; /* Use grid for easier 2-column layout */
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
     gap: 10px;
+    max-width: 1200px; /* Limit maximum width */
+    margin: 0 auto; /* Center the grid */
+    padding: 16px; /* Add some padding */
 }
 
 .card, .cardDark {
@@ -148,6 +150,7 @@ footer {
 
 @media screen and (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr; /* One column on smaller screens */
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
     }
 }
