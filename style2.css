@@ -86,14 +86,14 @@ body {
     justify-content: center;
   }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+
+  .grid {
+    display: -webkit-grid; /* Safari prefix */
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    max-width: 2200px; /* Limit maximum width */
-    /* Remove padding: */
+    max-width: 2200px;
     padding: 16px;
-  }
+}
 
 .card, .cardDark {
     display: flex;
@@ -110,6 +110,7 @@ body {
     max-height: 80%;
     object-fit: cover; /* Ensures the image scales proportionally */
     border-radius: 4px;
+    padding: 5px;
 }
 
 .card {
@@ -155,7 +156,9 @@ footer {
 
 @media screen and (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 8px; /* Adjust padding for smaller screens */
     }
 }
