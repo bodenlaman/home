@@ -81,18 +81,13 @@ body {
     margin: 0 auto;
 }
 
-.grid-container {
-    display: flex;
-    justify-content: center;
-  }
-
 .grid {
-    display: -webkit-grid; /* Safari prefix */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
     gap: 10px;
-    max-width: 2200px;
-    padding: 16px;
+    max-width: 1200px; /* Limit maximum width */
+    margin: 0 auto; /* Center the grid */
+    padding: 16px; /* Add some padding */
 }
 
 .card, .cardDark {
@@ -110,7 +105,6 @@ body {
     max-height: 80%;
     object-fit: cover; /* Ensures the image scales proportionally */
     border-radius: 4px;
-    padding: 5px;
 }
 
 .card {
@@ -156,9 +150,7 @@ footer {
 
 @media screen and (max-width: 768px) {
     .grid {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        grid-template-columns: 1fr; /* Single column on smaller screens */
         padding: 8px; /* Adjust padding for smaller screens */
     }
 }
