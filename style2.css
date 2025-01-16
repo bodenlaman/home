@@ -86,9 +86,9 @@ body {
     justify-content: center;
   }
 
-
-  .grid {
+.grid {
     display: -webkit-grid; /* Safari prefix */
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     max-width: 2200px;
