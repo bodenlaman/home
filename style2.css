@@ -81,14 +81,19 @@ body {
     margin: 0 auto;
 }
 
+.grid-container {
+    display: flex;
+    justify-content: center;
+  }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns by default */
     gap: 10px;
-    max-width: 1200px; /* Limit maximum width */
-    margin: 0 auto; /* Center the grid */
-    padding: 16px; /* Add some padding */
-}
+    max-width: 2200px; /* Limit maximum width */
+    /* Remove padding: */
+    padding: 16px;
+  }
 
 .card, .cardDark {
     display: flex;
