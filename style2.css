@@ -148,6 +148,11 @@ footer {
     color: white;
 }
 
+.banner {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
 @media screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr; /* Single column on smaller screens */
