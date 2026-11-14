@@ -1,0 +1,28 @@
+{{- /* Home header: profile. Portrait, name, bio and the social row — the
+       personal-site archetype, in place of the masthead.
+
+       This replaces the masthead rather than sitting above it. Both are the
+       page's hero; stacking them gives the home two competing focal points and
+       pushes the posts below the fold.
+
+       The name falls back to the site title, the bio to params.description.
+       Portrait and socials reuse the same partials the About page does, so a
+       site configures them once.
+
+       Takes the page as its argument. */ -}}
+{{- $s := .Site -}}
+{{- $name := partial "author.html" . | default $s.Title -}}
+{{- $bio := $s.Params.profileBio | default $s.Params.description -}}
+
+<header class="profile">
+  <div class="profile__portrait-wrap">
+    {{- /* 320px wide for a 160px slot, so it stays sharp on a 2x display */ -}}
+    {{ partial "portrait.html" (dict "page" . "class" "profile__portrait" "process" "resize 320x webp q85" "loading" "eager") }}
+  </div>
+
+  <div class="profile__text">
+    <h1 class="profile__name">{{ $name }}<span class="accent">.</span></h1>
+    {{- with $bio }}<p class="profile__bio">{{ . }}</p>{{ end }}
+    {{ partial "social-row.html" (dict "page" . "prefix" "profile") }}
+  </div>
+</header>

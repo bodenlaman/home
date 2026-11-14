@@ -1,0 +1,71 @@
+{{- $s := .Site -}}
+{{- /* Both lookups are configurable: a site that calls the section
+       "credentials" sets params.certsSection and puts `type: certs` in that
+       section's _index.md so these layouts still apply. Same for the resume. */ -}}
+{{- $certsSection := $s.Params.certsSection | default "certs" -}}
+{{- $certs := where $s.RegularPages "Section" $certsSection -}}
+{{- $certsPage := $s.GetPage (printf "/%s" $certsSection) -}}
+{{- $resume := $s.GetPage ($s.Params.resumePath | default "/resume") -}}
+{{- $rss := "" -}}
+{{- with $s.Home.OutputFormats.Get "rss" }}{{ $rss = .Permalink }}{{ end -}}
+
+<main class="about" id="main">
+  <div class="about__main">
+    <h1 class="about__title">
+      {{- /* Parts are separate spans with real whitespace between them: stacked
+             on desktop, reflowing to one sentence on mobile. A <br> could not do
+             both — hiding it on mobile leaves no space between the words. */ -}}
+      {{- with (.Params.heading | default $s.Params.aboutHeading) -}}
+        {{ . | safeHTML }}
+      {{- else -}}
+        {{ .Title }}<span class="accent">.</span>
+      {{- end -}}
+    </h1>
+
+    <div class="about__body">{{ .Content }}</div>
+
+    <div class="about__rows">
+      {{- with $certsPage }}
+        <a class="about__row" href="{{ .RelPermalink }}">
+          <span class="kicker">{{ i18n "aboutCerts" }}</span>
+          <span class="about__row-value">
+            <span class="about__row-long">{{ i18n "credentialsCount" (dict "count" (len $certs)) }}{{ with $s.Params.certHighlights }} · {{ delimit . ", " }}{{ end }}</span>
+            <span class="about__row-short">{{ i18n "certificationsCount" (dict "count" (len $certs)) }}</span>
+          </span>
+          <span class="about__arrow" aria-hidden="true">→</span>
+        </a>
+      {{- end }}
+
+      {{- with $resume }}
+        <a class="about__row" href="{{ .RelPermalink }}">
+          <span class="kicker">{{ i18n "aboutResume" }}</span>
+          <span class="about__row-value">{{ $s.Params.resumeLabel | default (i18n "downloadPdf") }}</span>
+          <span class="about__arrow" aria-hidden="true">→</span>
+        </a>
+      {{- end }}
+
+      {{- /* The design's ELSEWHERE row lives here as text links. With the icon
+             row under the portrait it would be the same links twice on one
+             screen, so it is off by default. Set aboutElsewhereRow: true to
+             bring it back. */ -}}
+      {{- if eq $s.Params.aboutElsewhereRow true }}
+      <div class="about__row">
+        <span class="kicker">{{ i18n "aboutElsewhere" }}</span>
+        <span class="about__elsewhere">
+          {{- range $s.Params.socialIcons }}
+            <a href="{{ .url }}"{{ if not (hasPrefix .url "mailto:") }} rel="me noopener"{{ end }}>{{ partial "social-name.html" .name }}</a>
+          {{- end }}
+          {{- with $rss }}<a href="{{ . }}">RSS</a>{{ end }}
+        </span>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="about__portrait-wrap">
+    {{- /* 800px wide for a 400px slot, so it stays sharp on a 2x display */ -}}
+    {{ partial "portrait.html" (dict "page" . "class" "about__portrait" "process" "resize 800x webp q85") }}
+
+    {{ partial "social-row.html" (dict "page" . "prefix" "about") }}
+  </div>
+</main>

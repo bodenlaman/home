@@ -1,0 +1,44 @@
+{{- /* Home style: ledger. One post per full-width row.
+
+       Unlike the grid this never leaves a ragged row, so it suits any post
+       count — one post looks as deliberate as thirty.
+
+       params.homeGroupByYear splits the rows under year headings. Grouping
+       drops the running number: with a year heading and a date on every row the
+       counter is a third ordering cue, and restarting it per group would
+       contradict the <ol> positions underneath.
+
+       Context: dict with `recent`, `archive`, `page` and `visible` (how many
+       stay on screen; anything past that is marked for the "Show more"
+       button). */ -}}
+
+{{- $grouped := .page.Site.Params.homeGroupByYear | default false -}}
+{{- $visible := .visible | default (len .recent) -}}
+
+{{- if $grouped }}
+<div class="ledger ledger--grouped">
+  {{- /* The counter runs across groups, not within them: "Show more" reveals
+         the last N posts overall, and restarting per year would hide a
+         different set than the flat ledger does from the same config. */ -}}
+  {{- $seen := 0 -}}
+  {{- range .recent.GroupByDate "2006" }}
+    <section class="ledger__group">
+      <h2 class="ledger__year">{{ .Key }}</h2>
+      <ol class="ledger__list">
+        {{- range .Pages }}
+          {{- partial "home/ledger-row.html" (dict "page" . "extra" (ge $seen $visible)) -}}
+          {{- $seen = add $seen 1 -}}
+        {{- end }}
+      </ol>
+    </section>
+  {{- end }}
+</div>
+{{- else }}
+<div class="ledger">
+  <ol class="ledger__list">
+    {{- range $i, $p := .recent }}
+      {{- partial "home/ledger-row.html" (dict "page" $p "extra" (ge $i $visible)) -}}
+    {{- end }}
+  </ol>
+</div>
+{{- end }}

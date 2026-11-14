@@ -1,0 +1,20 @@
+{{- /* Home header: masthead. The default — oversized type plus the typed line.
+
+       Takes the page as its argument. Markup is unchanged from when it lived
+       inline in index.html. */ -}}
+{{- $s := .Site -}}
+
+<header class="masthead">
+  <h1 class="masthead__title">
+    {{- with $s.Params.masthead -}}
+      {{ . | safeHTML }}
+    {{- else -}}
+      {{ $s.Title }}<span class="accent">.</span>
+    {{- end -}}
+  </h1>
+
+  <div class="masthead__side">
+    {{ partial "typer.html" . }}
+    {{- with $s.Params.tagline }}<span class="masthead__tagline">{{ . }}</span>{{ end }}
+  </div>
+</header>

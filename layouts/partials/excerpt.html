@@ -1,0 +1,6 @@
+{{- /* One-line excerpt for cards and search rows.
+       A post with no `description` falls back to its summary. Both are capped:
+       the design wants one or two lines, and descriptions often run longer. */ -}}
+{{- $text := "" -}}
+{{- with .Description }}{{ $text = . }}{{ else }}{{ $text = .Summary }}{{ end -}}
+{{- $text | plainify | chomp | truncate 110 -}}

@@ -1,0 +1,36 @@
+{{- /* Credly badges are remote. Localise them at build time so the page does
+       not depend on credly.com at runtime. Some badge URLs on this site are
+       dead (403), so a failure degrades to the plain surface square from the
+       design rather than a broken image icon. */ -}}
+{{- $size := .size | default 44 -}}
+{{- $px := mul $size 2 -}}
+{{- $src := .src -}}
+{{- $img := "" -}}
+
+{{- with $src -}}
+  {{- $res := "" -}}
+  {{- if hasPrefix . "http" -}}
+    {{- $r := try (resources.GetRemote .) -}}
+    {{- if $r.Err -}}
+      {{- warnf "nuno: cert badge unreachable, using placeholder: %s" . -}}
+    {{- else if $r.Value -}}
+      {{- $res = $r.Value -}}
+    {{- else -}}
+      {{- warnf "nuno: cert badge not found, using placeholder: %s" . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with (resources.Get .) }}{{ $res = . }}{{ end -}}
+  {{- end -}}
+
+  {{- with $res -}}
+    {{- $p := try (.Process (printf "resize %dx webp q80" $px)) -}}
+    {{- if $p.Value }}{{ $img = $p.Value.RelPermalink }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $img -}}
+  <img class="{{ .class }}" src="{{ $img }}" width="{{ $size }}" height="{{ $size }}"
+       alt="{{ .alt }} badge" loading="lazy" decoding="async">
+{{- else -}}
+  <span class="{{ .class }}" aria-hidden="true"></span>
+{{- end -}}

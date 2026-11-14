@@ -1,0 +1,13 @@
+{{- /* {{< callout type="tip" >}} … {{< /callout >}}   type: note | tip | warning */ -}}
+{{- $type := lower (.Get "type" | default (.Get 0) | default "note") -}}
+{{- if not (in (slice "note" "tip" "warning") $type) }}{{ $type = "note" }}{{ end -}}
+{{- $glyph := cond (eq $type "warning") "!" "i" -}}
+{{- /* i18n keys are calloutNote / calloutTip / calloutWarning. */ -}}
+{{- $label := .Get "title" | default (i18n (printf "callout%s" (title $type))) | default (title $type) -}}
+<aside class="callout callout--{{ $type }}">
+  <span class="callout__icon" aria-hidden="true">{{ $glyph }}</span>
+  <span class="callout__text">
+    <span class="callout__label">{{ $label }}</span>
+    <span class="callout__body">{{ .Inner | .Page.RenderString (dict "display" "block") }}</span>
+  </span>
+</aside>

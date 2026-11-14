@@ -1,0 +1,29 @@
+{{- $s := .Site -}}
+{{- $rss := "" -}}
+{{- with $s.Home.OutputFormats.Get "rss" }}{{ $rss = .Permalink }}{{ end -}}
+<footer class="foot">
+  <span class="foot__left">
+    {{- /* params.copyright wins. The fallback deliberately asserts no licence —
+           that is the site owner's call, not the theme's. */ -}}
+    <span>{{ $s.Params.copyright | default (printf "© %s %s" (now.Format "2006") (partial "author.html" . | default $s.Title)) }}</span>
+    <button class="ground-toggle" type="button" data-nuno-ground-toggle>
+      <span class="ground-toggle__dot" aria-hidden="true"></span>
+      <span data-nuno-ground-label>{{ i18n "switchToGreen" }}</span>
+    </button>
+  </span>
+
+  <span class="foot__links foot__desktop">
+    {{- range $s.Params.socialIcons }}
+      <a href="{{ .url }}"{{ if not (hasPrefix .url "mailto:") }} target="_blank" rel="me noopener noreferrer"{{ end }}>{{ partial "social-name.html" .name }}</a>
+    {{- end }}
+    {{- with $rss }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">RSS</a>{{ end }}
+  </span>
+
+  {{- /* Mobile puts the nav links here instead */}}
+  <span class="foot__mobile">
+    <span class="foot__links">
+      {{- range $s.Menus.main }}<a href="{{ .URL | relURL }}">{{ .Name }}</a>{{ end }}
+      {{- with $rss }}<a href="{{ . }}">RSS</a>{{ end }}
+    </span>
+  </span>
+</footer>

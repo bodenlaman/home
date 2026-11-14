@@ -1,0 +1,36 @@
+{{- $opts := dict "minify" true "target" "es2017" -}}
+{{- $searchURL := "" -}}
+{{- with .Site.Home.OutputFormats.Get "json" }}{{ $searchURL = .RelPermalink }}{{ end -}}
+{{- $searchJS := "" -}}
+{{- with resources.Get "js/search.js" }}
+  {{- $searchJS = (. | js.Build $opts | fingerprint).RelPermalink -}}
+{{- end -}}
+{{- /* Prefetch same-origin pages on hover/pointerdown. Pages are ~9 KB gzipped,
+       so a hovered link is usually already in cache by the time it is clicked.
+       Ignored by browsers that do not support it. */ -}}
+{{- if ne .Site.Params.prefetch false }}
+{{- /* safeHTML, not safeJS: html/template does not recognise the
+       "speculationrules" script type as a JS context, so it HTML-escapes the
+       quotes to &#34; and the browser — which does not decode entities inside
+       a raw-text <script> — throws a JSON syntax error on every page. */ -}}
+<script type="speculationrules">
+{{ `{"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}` | safeHTML }}
+</script>
+{{- end }}
+{{- /* JavaScript cannot call i18n, so every string the scripts render is handed
+       over here. Keep this in sync with i18n/*.toml. */ -}}
+{{- $strings := dict
+  "copy"        (i18n "copy")
+  "copied"      (i18n "copied")
+  "toLight"     (i18n "switchToLight")
+  "toDark"      (i18n "switchToDark")
+  "toGreen"     (i18n "switchToGreen")
+  "toBrown"     (i18n "switchToBrown")
+  "resultOne"   (i18n "resultsCountOne")
+  "resultMany"  (i18n "resultsCountMany")
+-}}
+<script>window.NUNO={index:{{ $searchURL }},search:{{ $searchJS }},i18n:{{ $strings }}};</script>
+{{- with resources.Get "js/app.js" }}
+  {{- $js := . | js.Build $opts | fingerprint -}}
+  <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end }}

@@ -1,0 +1,17 @@
+{{- /* One ledger row. Its own partial so grouped and ungrouped ledgers cannot
+       drift apart.
+
+       Params: page (required), extra (true marks it for the "Show more"
+       button) */ -}}
+<li class="ledger__item"{{ if .extra }} data-nuno-extra{{ end }}>
+  {{- with .page }}
+  <a class="ledger__row" href="{{ .RelPermalink }}">
+    <span class="ledger__title">{{ .Title }}</span>
+    <span class="ledger__meta">
+      <span class="ledger__date">{{ .Date.Format "Jan 2, 2006" }}</span>
+      {{- if .ReadingTime }}<span class="ledger__mins"> · {{ i18n "minutes" (dict "count" .ReadingTime) }}</span>{{ end }}
+    </span>
+    <span class="ledger__arrow" aria-hidden="true">→</span>
+  </a>
+  {{- end }}
+</li>

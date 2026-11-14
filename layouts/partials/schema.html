@@ -1,0 +1,61 @@
+{{- /* JSON-LD structured data.
+
+       Only two shapes are emitted, and only where they are true: WebSite on the
+       home page, BlogPosting on a dated post in mainSections. Everything else
+       gets nothing. Marking a search page or a taxonomy list as an Article is a
+       claim about content that is not there, and rich-result validators are
+       right to complain about it.
+
+       Built as a map and handed to `jsonify`, so every value is escaped by the
+       encoder rather than by hand — a quotation mark in a title would otherwise
+       produce invalid JSON and silently void the whole block.
+
+       No SearchAction: it promises a URL template that returns results, and
+       this theme's search is client-side with no such URL.
+
+       Params: page (required), image (absolute URL or "") */ -}}
+
+{{- $page := .page -}}
+{{- $s := $page.Site -}}
+{{- $image := .image -}}
+{{- $author := partial "author.html" $page -}}
+{{- $sections := $s.Params.mainSections | default (slice "posts") -}}
+
+{{- $data := dict -}}
+
+{{- if $page.IsHome -}}
+  {{- $data = dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "name" $s.Title
+    "url" $s.Home.Permalink -}}
+  {{- with $s.Params.description }}{{ $data = merge $data (dict "description" .) }}{{ end -}}
+  {{- with $author }}
+    {{- $data = merge $data (dict "author" (dict "@type" "Person" "name" .)) -}}
+  {{- end -}}
+
+{{- else if and $page.IsPage (in $sections $page.Type) (not $page.Date.IsZero) -}}
+  {{- $desc := $page.Description | default ($page.Summary | plainify | truncate 200) -}}
+  {{- $data = dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" $page.Title
+    "url" $page.Permalink
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" $page.Permalink)
+    "datePublished" ($page.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" ($page.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "publisher" (dict "@type" "Organization" "name" $s.Title "url" $s.Home.Permalink) -}}
+  {{- with $desc }}{{ $data = merge $data (dict "description" (. | plainify | chomp)) }}{{ end -}}
+  {{- with $author }}
+    {{- $data = merge $data (dict "author" (dict "@type" "Person" "name" .)) -}}
+  {{- end -}}
+  {{- with $image }}{{ $data = merge $data (dict "image" .) }}{{ end -}}
+  {{- with $page.Params.tags }}{{ $data = merge $data (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  {{- if $page.ReadingTime }}
+    {{- $data = merge $data (dict "timeRequired" (printf "PT%dM" $page.ReadingTime)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $data }}
+<script type="application/ld+json">{{ . | jsonify (dict "indent" "") | safeJS }}</script>
+{{- end -}}

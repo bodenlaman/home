@@ -1,0 +1,12 @@
+{{- /* Site author name, or "" if none is configured.
+       params.author may be a map with a .name key (the PaperMod-era shape, which
+       also carries .email) or a bare string. Both are common in the wild and
+       reading .name off a string is a hard template error, so normalise here and
+       let every call site just use this partial.
+
+       Takes the page as its argument: {{ partial "author.html" . }} */ -}}
+{{- $name := "" -}}
+{{- with .Site.Params.author -}}
+  {{- if reflect.IsMap . }}{{ $name = .name }}{{ else }}{{ $name = . }}{{ end -}}
+{{- end -}}
+{{- $name -}}

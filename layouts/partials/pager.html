@@ -1,0 +1,8 @@
+{{- /* Takes a Pager. */ -}}
+{{- if gt .TotalPages 1 }}
+<nav class="pager">
+  {{- with .Prev }}<a href="{{ .URL }}">{{ i18n "pagerNewer" }}</a>{{ end }}
+  <span class="kicker">{{ .PageNumber }} / {{ .TotalPages }}</span>
+  {{- with .Next }}<a href="{{ .URL }}">{{ i18n "pagerOlder" }}</a>{{ end }}
+</nav>
+{{- end }}

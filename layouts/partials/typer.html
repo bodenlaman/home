@@ -1,0 +1,18 @@
+{{- /* Typed masthead.
+   Every line is rendered invisibly into the same grid cell, so the block is
+   always as tall as the tallest line and typing never reflows the page.
+   Line 1 is server-rendered in full: that is the no-JS view. */ -}}
+{{- $lines := hugo.Data.quotes.lines -}}
+{{- with $lines }}
+  {{- $first := index . 0 }}
+<div class="typer" data-nuno-typer>
+  {{- range . }}
+  <p class="typer__ghost" aria-hidden="true">{{ .pre }}{{ .accent }}</p>
+  {{- end }}
+  <p class="typer__line">{{ $first.pre }}<span class="is-accent">{{ $first.accent }}</span></p>
+  {{- /* safeJS is required: inside a <script> Go treats this as a JS context and
+         would otherwise encode the array as a JSON *string*, so JSON.parse would
+         hand back a string and the typer would silently never start. */ -}}
+  <script type="application/json" data-nuno-quotes>{{ . | jsonify | safeJS }}</script>
+</div>
+{{- end }}

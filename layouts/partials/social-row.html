@@ -1,0 +1,29 @@
+{{- /* The round social icon row, shared by the About page and the profile home
+       header. RSS is appended automatically — do not list it in socialIcons or
+       it renders twice.
+
+       External links get rel="me" so the profiles can verify back, plus
+       noopener/noreferrer. mailto: gets neither: there is no window to open.
+
+       Params:
+         page    (required) any page, used to reach the site and its RSS output
+         prefix  BEM block the classes hang off — "about" or "profile" */ -}}
+
+{{- $s := .page.Site -}}
+{{- $prefix := .prefix | default "social" -}}
+{{- $rss := "" -}}
+{{- with $s.Home.OutputFormats.Get "rss" }}{{ $rss = .Permalink }}{{ end -}}
+
+<div class="{{ $prefix }}__social">
+  {{- range $s.Params.socialIcons }}
+    {{- $ext := not (hasPrefix .url "mailto:") -}}
+    <a class="{{ $prefix }}__social-link" href="{{ .url }}"
+       {{- if $ext }} target="_blank" rel="me noopener noreferrer"{{ end }}
+       aria-label="{{ partial "social-name.html" .name }}{{ if $ext }} {{ i18n "opensInNewTab" }}{{ end }}"
+       title="{{ partial "social-name.html" .name }}">{{ partial "social-icon.html" .name }}</a>
+  {{- end }}
+  {{- with $rss }}
+    <a class="{{ $prefix }}__social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer"
+       aria-label="RSS {{ i18n "opensInNewTab" }}" title="RSS">{{ partial "social-icon.html" "rss" }}</a>
+  {{- end }}
+</div>

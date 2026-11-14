@@ -1,0 +1,24 @@
+{{- /* Home style: grid. The default — three columns of preview cards.
+
+       Context: dict with `recent` (the posts to show), `archive` (URL or "")
+       and `visible` (how many stay on screen; anything past that is marked for
+       the "Show more" button).
+
+       Markup is unchanged from when it lived inline in index.html — only the
+       indentation shifted — so existing sites render exactly as before. */ -}}
+
+{{- $visible := .visible | default (len .recent) -}}
+
+<div class="cards">
+  {{- range $i, $p := .recent }}
+    <a class="card" href="{{ $p.RelPermalink }}"{{ if ge $i $visible }} data-nuno-extra{{ end }}>
+      <span class="card__meta">
+        <span class="card__num">{{ printf "%02d" (add $i 1) }}</span>
+        <span>{{ $p.Date.Format "Jan 2, 2006" }}{{ if $p.ReadingTime }}<span class="nuno-mobile-mins"> · {{ i18n "minutes" (dict "count" $p.ReadingTime) }}</span>{{ end }}</span>
+      </span>
+      <span class="card__title">{{ $p.Title }}</span>
+      {{- with partial "excerpt.html" $p }}<span class="card__excerpt">{{ . }}</span>{{ end }}
+      <span class="card__read">{{ i18n "minutesRead" (dict "count" $p.ReadingTime) }}</span>
+    </a>
+  {{- end }}
+</div>

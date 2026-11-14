@@ -1,0 +1,6 @@
+{{- /* Star rating out of 5. Unicode glyphs, matching the theme's ☀ ☾ ⌕ ↑ ↓ ↵ →
+       approach — no icon font, no extra request. Takes a number. */ -}}
+{{- $r := . | int -}}
+{{- range seq 5 -}}
+  {{- if le . $r }}<span class="star is-full">★</span>{{ else }}<span class="star">☆</span>{{ end -}}
+{{- end -}}

@@ -1,0 +1,53 @@
+{{- /* Giscus comments. Off unless configured, and even then the request is not
+       made until the reader scrolls to it.
+
+       This is the theme's only third-party connection, and it is the reader's
+       bandwidth and the reader's data, so it is opt-in twice over: nothing
+       loads without a params.giscus block, and nothing is fetched on a page
+       view that never reaches the comments.
+
+       All four ids are required. Giscus fails silently with a partial config —
+       an empty box and no explanation — so an incomplete block warns loudly at
+       build time and renders nothing rather than shipping that.
+
+       Per-page `comments: false` in front matter turns it off for one page.
+
+       Takes the page as its argument. */ -}}
+
+{{- $s := .Site -}}
+{{- $g := $s.Params.giscus -}}
+
+{{- if and $g (ne (.Params.comments | default true) false) -}}
+  {{- $missing := slice -}}
+  {{- range (slice "repo" "repoId" "category" "categoryId") -}}
+    {{- if not (index $g .) }}{{ $missing = $missing | append . }}{{ end -}}
+  {{- end -}}
+
+  {{- if $missing -}}
+    {{- warnf "nuno: params.giscus is missing %s — comments not rendered. All four of repo, repoId, category, categoryId are required; find them at https://giscus.app" (delimit $missing ", ") -}}
+  {{- else -}}
+    {{- /* Giscus takes its own two-letter code; fall back to the site's. */ -}}
+    {{- $lang := $g.lang | default (index (split $s.Language.Locale "-") 0) -}}
+
+    <section class="comments" aria-labelledby="nuno-comments-heading">
+      <span class="kicker" id="nuno-comments-heading">{{ i18n "comments" }}</span>
+      <div class="comments__mount"
+           data-nuno-giscus
+           data-repo="{{ $g.repo }}"
+           data-repo-id="{{ $g.repoId }}"
+           data-category="{{ $g.category }}"
+           data-category-id="{{ $g.categoryId }}"
+           data-mapping="{{ $g.mapping | default "pathname" }}"
+           data-strict="{{ $g.strict | default "1" }}"
+           data-reactions-enabled="{{ $g.reactionsEnabled | default "1" }}"
+           data-emit-metadata="{{ $g.emitMetadata | default "0" }}"
+           data-input-position="{{ $g.inputPosition | default "bottom" }}"
+           data-lang="{{ $lang }}"
+           data-theme-light="{{ $g.themeLight | default "light" }}"
+           data-theme-dark="{{ $g.themeDark | default "dark" }}"></div>
+      <noscript>
+        <p class="comments__noscript">{{ i18n "commentsNoScript" }}</p>
+      </noscript>
+    </section>
+  {{- end -}}
+{{- end -}}

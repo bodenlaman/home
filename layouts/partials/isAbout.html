@@ -1,0 +1,12 @@
+{{- /* Returns a non-empty string for the About page.
+
+       Matching on the URL as well as the layout means an existing site can
+       switch to nuno without editing about.md front matter. An explicit
+       `layout` always wins, though, so a site that genuinely wants an ordinary
+       post at /about/ can say `layout: single` and get one — otherwise the URL
+       match would be inescapable. */ -}}
+{{- if eq .Layout "about" -}}
+  yes
+{{- else if and (not .Layout) (eq .RelPermalink (relURL "/about/")) -}}
+  yes
+{{- end -}}

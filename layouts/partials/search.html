@@ -1,0 +1,29 @@
+{{- $count := len (where .Site.RegularPages "Type" "in" (.Site.Params.mainSections | default (slice "posts"))) -}}
+<div class="search" id="nuno-search" hidden role="dialog" aria-modal="true" aria-label="{{ i18n "searchPosts" }}">
+  <div class="search__inner">
+    <div class="search__row">
+      <span class="search__glyph" aria-hidden="true">⌕</span>
+      <input class="search__input" type="search" id="nuno-search-input" placeholder="{{ i18n "searchPlaceholder" }}"
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+             aria-label="{{ i18n "searchPosts" }}" aria-controls="nuno-search-results">
+      <button class="search__esc" type="button" data-nuno-search-close>{{ i18n "searchEsc" }}</button>
+      <button class="search__esc--mobile" type="button" data-nuno-search-close>{{ i18n "searchCancel" }}</button>
+    </div>
+
+    <div class="search__body">
+      <span class="kicker" data-nuno-search-count aria-live="polite"></span>
+      <div class="search__results" id="nuno-search-results" role="listbox"></div>
+    </div>
+
+    <div class="search__hints" aria-hidden="true">
+      <span>{{ i18n "searchHintMove" }}</span><span>{{ i18n "searchHintOpen" }}</span><span>{{ i18n "searchHintClose" }}</span>
+    </div>
+  </div>
+</div>
+<template id="nuno-search-empty">
+  <div class="search__empty">
+    <p class="search__empty-title">{{ i18n "searchEmptyTitle" }} <span class="accent" data-q></span>.</p>
+    <p class="search__empty-hint">{{ i18n "searchEmptyHint" }}</p>
+    <a class="search__empty-link" href="{{ "" | relURL }}">{{ i18n "searchBrowseAll" (dict "count" $count) }}</a>
+  </div>
+</template>

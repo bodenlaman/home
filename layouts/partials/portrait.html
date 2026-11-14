@@ -1,0 +1,34 @@
+{{- /* Resolves and renders the portrait. Shared by the About page and the
+       profile home header so the lookup order lives in one place.
+
+       `portrait` is looked for first as a page resource, then in assets/. When
+       it is unset or unresolvable the empty frame renders instead — that is the
+       design's default state, not an error, so nothing is logged.
+
+       Params:
+         page     (required) the page, for front matter and page resources
+         class    CSS class on the <img> or the empty frame
+         process  Hugo image spec; size it for 2x the slot it fills
+         loading  "lazy" (default) or "eager" */ -}}
+
+{{- $page := .page -}}
+{{- $s := $page.Site -}}
+{{- $class := .class | default "portrait" -}}
+{{- $process := .process | default "resize 800x webp q85" -}}
+{{- $loading := .loading | default "lazy" -}}
+
+{{- $portrait := $page.Params.portrait | default $s.Params.portrait -}}
+{{- $img := "" -}}
+{{- with $portrait }}
+  {{- with ($page.Resources.GetMatch .) }}{{ $img = . }}{{ else }}
+    {{- with (resources.Get .) }}{{ $img = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $img -}}
+  {{- $p := $img.Process $process }}
+  <img class="{{ $class }}" src="{{ $p.RelPermalink }}" width="{{ $p.Width }}" height="{{ $p.Height }}"
+       alt="{{ partial "author.html" $page | default $s.Title }}" loading="{{ $loading }}" decoding="async">
+{{- else -}}
+  <div class="{{ $class }}" role="presentation"></div>
+{{- end -}}

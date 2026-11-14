@@ -1,0 +1,39 @@
+{{- $brand := .Site.Params.brand | default (replaceRE "^https?://" "" (trim .Site.BaseURL "/")) -}}
+<nav class="nav">
+  <a class="nav__brand" href="{{ "" | relURL }}">{{ $brand }}</a>
+
+  {{- range .Site.Menus.main }}
+    {{- $current := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}}
+    {{- $mobile := eq (lower .Identifier) "about" -}}
+    <a class="nav__link {{ if not $mobile }}nav__desktop-only{{ end }}"
+       href="{{ .URL | relURL }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}</a>
+  {{- end }}
+
+  {{- /* Language switcher. Only on a multilingual build, and only listing the
+         languages this page actually exists in — offering a link to a page that
+         is not translated sends the reader to a 404 rather than to a
+         translation. Plain links, not a dropdown: with two or three languages a
+         menu is more machinery than the job needs. */ -}}
+  {{- with .Translations }}
+    <span class="nav__langs">
+      {{- range . }}
+        <a class="nav__lang" href="{{ .Permalink }}" lang="{{ .Language.Locale }}"
+           hreflang="{{ .Language.Locale }}">{{ .Language.Label | default .Language.Lang }}</a>
+      {{- end }}
+    </span>
+  {{- end }}
+
+  <button class="nav__icon" type="button" data-nuno-theme-toggle aria-label="{{ i18n "switchColourTheme" }}">
+    <span data-nuno-theme-glyph aria-hidden="true">☾</span>
+  </button>
+
+  {{- /* Desktop: a search pill. Mobile: a round icon. Both open the overlay. */}}
+  <button class="nav__search nav__desktop-only" type="button" data-nuno-search-open>
+    <span aria-hidden="true">⌕</span>
+    <span class="nav__search-fake">{{ i18n "searchPosts" }}</span>
+    <span class="nav__kbd" data-nuno-kbd>⌘K</span>
+  </button>
+  <button class="nav__icon nav__mobile-only" type="button" data-nuno-search-open aria-label="{{ i18n "searchPosts" }}">
+    <span aria-hidden="true">⌕</span>
+  </button>
+</nav>

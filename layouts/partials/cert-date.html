@@ -1,0 +1,6 @@
+{{- $d := .Params.certMeta.earnedDate -}}
+{{- if $d -}}
+  {{- (time $d).Format "Jan 2006" -}}
+{{- else -}}
+  {{- .Date.Format "Jan 2006" -}}
+{{- end -}}

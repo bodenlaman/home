@@ -1,0 +1,34 @@
+{{- /* Related posts, from Hugo's own similarity index.
+
+       The pool is restricted to mainSections before asking. Site-wide Related
+       would happily match a post against a book or a certification, which share
+       the taxonomy but not the point.
+
+       Quality here depends entirely on the site's `related` config — with none,
+       Hugo indexes `keywords`, which this theme's front matter does not use, so
+       the result is empty rather than wrong. See the README. Rendering nothing
+       is the correct outcome for a site with no tags and a young archive, so
+       there is no warning: an empty block is not a misconfiguration. */ -}}
+
+{{- $page := . -}}
+{{- $sections := .Site.Params.mainSections | default (slice "posts") -}}
+{{- $pool := where .Site.RegularPages "Type" "in" $sections -}}
+{{- $n := int (.Site.Params.relatedCount | default 3) -}}
+{{- $related := first $n ($pool.Related $page) -}}
+
+{{- with $related }}
+  <section class="related" aria-labelledby="nuno-related">
+    <span class="kicker" id="nuno-related">{{ i18n "relatedReading" }}</span>
+    <div class="related__list">
+      {{- range . }}
+        <a class="related__item" href="{{ .RelPermalink }}">
+          <span class="related__title">{{ .LinkTitle }}</span>
+          <span class="related__meta">
+            {{- if not .Date.IsZero }}{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}{{ end }}
+            {{- if .ReadingTime }} · {{ i18n "minutes" (dict "count" .ReadingTime) }}{{ end }}
+          </span>
+        </a>
+      {{- end }}
+    </div>
+  </section>
+{{- end }}

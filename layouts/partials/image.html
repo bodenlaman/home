@@ -1,0 +1,58 @@
+{{- /* Renders an optimised <img>. Shared by the markdown image render hook and
+       the figure shortcode so both paths get the same treatment.
+
+       Local images are converted to webp and capped at 2x the 680px reading
+       column. Remote ones are pulled in at build time so a post does not depend
+       on someone else's host at runtime. Anything that cannot be processed
+       falls back to the original URL, so a bad path never breaks the page.
+
+       GIF and SVG pass through untouched: Hugo would flatten an animated GIF to
+       its first frame, and SVG needs no raster processing.
+
+       Params: src (required), alt, title, class, loading ("eager" to opt out). */ -}}
+
+{{- $src := .src -}}
+{{- $ext := lower (path.Ext $src) -}}
+{{- $skip := or (in (slice ".gif" ".svg") $ext) (hasPrefix $src "data:") -}}
+
+{{- $res := "" -}}
+{{- if and $src (not $skip) -}}
+  {{- if hasPrefix $src "http" -}}
+    {{- $r := try (resources.GetRemote $src) -}}
+    {{- if $r.Err -}}
+      {{- warnf "nuno: remote image unreachable, hotlinking instead: %s" $src -}}
+    {{- else -}}
+      {{- with $r.Value }}{{ $res = . }}{{ end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with (resources.Get (strings.TrimPrefix "/" $src)) }}{{ $res = . }}{{ else }}
+      {{- warnf "nuno: image not found in assets, linking as-is (check the path and its case): %s" $src -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $out := "" }}{{ $w := 0 }}{{ $h := 0 -}}
+{{- with $res -}}
+  {{- if eq .ResourceType "image" -}}
+    {{- $t := . -}}
+    {{- /* Already-small webp files are left alone; re-encoding them would be a
+           second lossy pass for no gain. Oversized ones are worth redoing. */ -}}
+    {{- $bloated := and (eq $ext ".webp") (gt (len .Content) 120000) -}}
+    {{- if gt .Width 1360 -}}
+      {{- $p := try (.Process "resize 1360x webp q82") -}}
+      {{- with $p.Value }}{{ $t = . }}{{ end -}}
+    {{- else if or (ne $ext ".webp") $bloated -}}
+      {{- $p := try (.Process "webp q82") -}}
+      {{- with $p.Value }}{{ $t = . }}{{ end -}}
+    {{- end -}}
+    {{- $out = $t.RelPermalink }}{{ $w = $t.Width }}{{ $h = $t.Height -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $loading := .loading | default "lazy" -}}
+<img src="{{ or $out ($src | safeURL) }}" alt="{{ .alt }}"
+  {{- with .title }} title="{{ . }}"{{ end }}
+  {{- with .class }} class="{{ . }}"{{ end }}
+  {{- if .width }} width="{{ .width }}"
+  {{- else if $out }} width="{{ $w }}" height="{{ $h }}"{{ end }}
+  {{- if ne $loading "eager" }} loading="lazy"{{ end }} decoding="async">

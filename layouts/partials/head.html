@@ -1,0 +1,164 @@
+{{- $s := .Site -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{- /* Title */ -}}
+{{- $title := cond .IsHome $s.Title (printf "%s · %s" .Title $s.Title) -}}
+<title>{{ $title }}</title>
+
+{{- /* Description */ -}}
+{{- $desc := "" -}}
+{{- with .Description }}{{ $desc = . }}{{ else }}
+  {{- if .IsPage }}{{ $desc = .Summary | plainify | truncate 160 }}{{ else }}{{ $desc = $s.Params.description }}{{ end -}}
+{{- end -}}
+<meta name="description" content="{{ $desc | plainify | chomp }}">
+{{- with partial "author.html" . }}
+<meta name="author" content="{{ . }}">
+{{- end }}
+
+{{- /* Webmention endpoint, when a domain is configured. Carried over from the
+       previous theme: without this link others cannot send webmentions. */ -}}
+{{- with $s.Params.webmentionDomain }}
+<link rel="webmention" href="https://webmention.io/{{ . }}/webmention">
+{{- end }}
+
+{{- /* Canonical + feeds */ -}}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ with .OutputFormats.Get "rss" -}}
+  <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $s.Title }}">
+{{- end }}
+
+{{- /* Translations. AllTranslations includes this page, so each language —
+       including the current one — gets an hreflang, which is what search
+       engines expect; a set that omits itself is treated as incomplete.
+       x-default points at the site's first configured language.
+
+       Emitted only on a genuinely multilingual build: on a single-language site
+       AllTranslations is just this page, and one self-referential alternate is
+       noise. */ -}}
+{{- if gt (len .AllTranslations) 1 }}
+  {{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+  {{- end }}
+  {{- with index .AllTranslations 0 }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Open Graph */ -}}
+<meta property="og:site_name" content="{{ $s.Title }}">
+<meta property="og:title" content="{{ cond .IsHome $s.Title .Title }}">
+<meta property="og:description" content="{{ $desc | plainify | chomp }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+{{- if and .IsPage (not .Date.IsZero) }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- /* Compared by calendar day, not instant: Lastmod defaults to Date, and
+         with enableGitInfo it is the commit time, which differs from the front
+         matter date by hours on the very first commit. Only a different day is
+         a real update. */ -}}
+  {{- if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- end }}
+{{- end }}
+{{- with .Language.Locale }}
+<meta property="og:locale" content="{{ replace . "-" "_" }}">
+{{- end }}
+{{- if gt (len .Translations) 0 }}
+  {{- range .Translations }}
+<meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Social preview image. The design deliberately drops cover images from the
+       page, but a link shared to LinkedIn or WhatsApp still needs one — so the
+       cover is used here even though it is never rendered. Falls back to a
+       site-wide image. Resized to 1200x630, the size every platform expects. */ -}}
+{{- $og := "" -}}
+{{- with .Params.cover }}{{ $og = .image }}{{ end -}}
+{{- if not $og -}}
+  {{- $imgs := .Params.images | default $s.Params.images -}}
+  {{- if $imgs }}{{ $og = index $imgs 0 }}{{ end -}}
+{{- end -}}
+{{- if not $og }}{{ $og = $s.Params.ogImage | default "" }}{{ end -}}
+{{- $abs := "" -}}
+{{- with $og -}}
+  {{- if hasPrefix . "http" -}}
+    {{- $abs = . -}}
+  {{- else -}}
+    {{- with (resources.Get (strings.TrimPrefix "/" .)) -}}
+      {{- $p := try (.Process "resize 1200x630 webp q82") -}}
+      {{- with $p.Value }}{{ $abs = .Permalink }}{{ else }}{{ $abs = $.Permalink }}{{ end -}}
+    {{- else -}}
+      {{- /* Emitting a URL for a file that is not there gives every share a
+             broken preview card, which is worse than having none. */ -}}
+      {{- warnf "nuno: og:image not found, omitting social preview: %s" . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $abs }}
+<meta property="og:image" content="{{ . }}">
+<meta name="twitter:image" content="{{ . }}">
+{{- end }}
+<meta name="twitter:card" content="{{ cond (ne $abs "") "summary_large_image" "summary" }}">
+
+{{ partial "schema.html" (dict "page" . "image" $abs) }}
+
+{{- /* Theme + ground, applied synchronously so there is never a flash.
+       Reads localStorage, falls back to the configured default or the OS. */ -}}
+{{- $fallback := $s.Params.defaultTheme | default "auto" -}}
+{{- $ground := $s.Params.ground | default "brown" -}}
+<script>
+(function(){var d=document.documentElement,s;try{s=localStorage}catch(e){}
+var t=s&&s.getItem('nuno-theme'),g=s&&s.getItem('nuno-ground'),f={{ $fallback }};
+if(t!=='light'&&t!=='dark'){t=(f==='light'||f==='dark')?f:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}
+if(g!=='brown'&&g!=='green'){g={{ $ground }}}
+d.setAttribute('data-theme',t);d.setAttribute('data-ground',g);d.style.colorScheme=t})();
+</script>
+
+{{- /* Accent. Light mode always uses the darkened variant so accent text
+       clears 4.5:1 on ivory. */ -}}
+{{- $accents := dict
+  "#e8b04b" "#9a5b12"
+  "#d97b4f" "#a8451f"
+  "#0f766e" "#0f766e"
+  "#8fb8d6" "#2f6b95" -}}
+{{- $a := lower ($s.Params.accent | default "#e8b04b") -}}
+{{- $aLight := lower ($s.Params.accentLight | default (index $accents $a) | default "#9a5b12") -}}
+{{- /* Fonts */ -}}
+<link rel="preload" href="{{ "fonts/nunito-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+
+{{- /* Styles, inlined to remove the render-blocking request */ -}}
+{{- /* ExecuteAsTemplate so the @font-face URLs go through relURL — a literal
+       /fonts/... would 404 on any site served from a sub-path. */ -}}
+{{- with resources.Get "css/nuno.css" }}
+  {{- $css := . | resources.ExecuteAsTemplate "css/nuno.css" $ | minify | fingerprint -}}
+  <style>{{ $css.Content | safeCSS }}</style>
+{{- end }}
+
+{{- /* Accent override must come AFTER the stylesheet: it sets the same :root
+       custom properties at the same specificity, so source order decides.
+       Emitted whenever either value differs from the CSS defaults — testing
+       only the dark accent would silently ignore a lone accentLight. */ -}}
+{{- if or (ne $a "#e8b04b") (ne $aLight "#9a5b12") }}
+<style>:root{--accent-dark:{{ $a | safeCSS }};--accent-light:{{ $aLight | safeCSS }}}</style>
+{{- end }}
+
+{{- /* Only link an icon that actually exists — a hardcoded /favicon.ico is a
+       404 on every page of a site that does not have one. params.favicon wins;
+       otherwise probe the usual names. */ -}}
+{{- $icon := "" -}}
+{{- with $s.Params.favicon -}}
+  {{- $icon = . | relURL -}}
+{{- else -}}
+  {{- range (slice "favicon.ico" "favicon.svg" "favicon.png") -}}
+    {{- if not $icon }}{{ with resources.Get . }}{{ $icon = .RelPermalink }}{{ end }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $icon }}<link rel="icon" href="{{ . }}" sizes="any">{{ end }}
+{{- /* params.appleTouchIcon is the real name. params.label.icon is a PaperMod
+       alias, kept so a site migrating from that theme does not silently lose its
+       touch icon; it is deprecated and may go in a future release. */ -}}
+{{- with ($s.Params.appleTouchIcon | default $s.Params.label.icon) }}
+<link rel="apple-touch-icon" href="{{ . | relURL }}">
+{{- end }}

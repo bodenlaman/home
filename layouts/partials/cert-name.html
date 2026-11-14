@@ -1,0 +1,23 @@
+{{- /* Full name on desktop, short name on mobile (per the mocks).
+       Short name is, in order of preference:
+         1. an explicit `shortTitle` in front matter — use this to pin anything
+            the heuristics get wrong (e.g. "MCSE Data Management");
+         2. a trailing acronym like "(CKS)" — must contain a letter, so a
+            version suffix like "(003)" is not mistaken for one;
+         3. the title with the vendor prefix and any version suffix trimmed. */ -}}
+{{- $full := .Title -}}
+{{- $short := .Params.shortTitle -}}
+
+{{- if not $short -}}
+  {{- with (findRE `\([A-Z][A-Z0-9]{1,9}\)$` $full 1) -}}
+    {{- $short = replaceRE `[()]` "" (index . 0) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $short -}}
+  {{- $s := replaceRE `^([A-Za-z]+ )?Certified:?\s*` "" $full -}}
+  {{- $s = replaceRE `^Microsoft\s+` "" $s -}}
+  {{- $short = trim (replaceRE `\s*\([0-9]+\)$` "" $s) " " -}}
+{{- end -}}
+
+<span class="cert__name-full">{{ $full }}</span><span class="cert__name-short">{{ $short }}</span>

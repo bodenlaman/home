@@ -1,0 +1,13 @@
+{{- $link := .Get "link" -}}
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+  {{- with $link }}<a href="{{ . }}"{{ with $.Get "target" }} target="{{ . }}"{{ end }} rel="noopener">{{ end -}}
+  {{- partial "image.html" (dict
+      "src" (.Get "src")
+      "alt" (.Get "alt" | default (.Get "caption") | plainify)
+      "title" (.Get "title")
+  ) -}}
+  {{- with $link }}</a>{{ end -}}
+  {{- if or (.Get "title") (.Get "caption") -}}
+    <figcaption>{{ with .Get "title" }}<strong>{{ . }}</strong> {{ end }}{{ .Get "caption" | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

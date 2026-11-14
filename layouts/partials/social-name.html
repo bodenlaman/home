@@ -1,0 +1,6 @@
+{{- /* Display name for a social link. `title` would give "Github". */ -}}
+{{- $names := dict
+  "email" "Email" "github" "GitHub" "linkedin" "LinkedIn" "rss" "RSS"
+  "twitter" "Twitter" "x" "X" "mastodon" "Mastodon" "youtube" "YouTube"
+  "instagram" "Instagram" "bluesky" "Bluesky" "telegram" "Telegram" -}}
+{{- index $names (lower .) | default (title .) -}}
