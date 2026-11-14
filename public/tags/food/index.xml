@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Food on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/tags/food/</link>
+		<description>Recent content in Food on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/food/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Videography</title>
+				<link>http://localhost:1313/posts/safebite-copy/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/safebite-copy/</guid>
+				<description>&lt;h2 id=&#34;introducing-safebite&#34;&gt;Introducing SafeBite&lt;a class=&#34;heading-anchor&#34; href=&#34;#introducing-safebite&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Encountered an allergen at a restaurant? Save it to your places in SafeBtie and let others know about it!&lt;/p&gt;&#xA;&lt;aside class=&#34;callout callout--note&#34;&gt;&#xA;  &lt;span class=&#34;callout__icon&#34; aria-hidden=&#34;true&#34;&gt;i&lt;/span&gt;&#xA;  &lt;span class=&#34;callout__text&#34;&gt;&#xA;    &lt;span class=&#34;callout__label&#34;&gt;Note&lt;/span&gt;&#xA;    &lt;span class=&#34;callout__body&#34;&gt;&lt;p&gt;Supported Devices: iPhone 8 / iPhone 8 Plus or Newer; iPhone X or Newer&lt;/p&gt;&#xA;&lt;/span&gt;&#xA;  &lt;/span&gt;&#xA;&lt;/aside&gt;&#xA;&#xA;&lt;blockquote&gt;&lt;p&gt;Supported Devices:&lt;/p&gt;&#xA;&lt;p&gt;Phone 8 / iPhone 8 Plus or Newer; iPhone X or Newer&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;find-nearby-places&#34;&gt;Find Nearby Places&lt;a class=&#34;heading-anchor&#34; href=&#34;#find-nearby-places&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;SafeBite&amp;rsquo;s intuitive design helps you find restaurants around you, or matching your specific craving.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bookshelf on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/home/books/</link>
+		<description>Recent content in Bookshelf on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/home/books/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Quiet Machine</title>
+				<link>http://localhost:1313/home/books/the-quiet-machine/</link>
+				<pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/books/the-quiet-machine/</guid>
+				<description>&lt;p&gt;Because &lt;code&gt;status&lt;/code&gt; is &lt;code&gt;Reading&lt;/code&gt;, this book floats to the front of the shelf, gets an&#xA;accent ring and a badge on the grid, and shows a &amp;ldquo;Reading now&amp;rdquo; marker here.&lt;/p&gt;&#xA;&lt;p&gt;It has no &lt;code&gt;rating&lt;/code&gt;, so the stars are omitted entirely rather than rendered empty —&#xA;a book you have not finished has not been judged yet.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The Pragmatic Shelf</title>
+				<link>http://localhost:1313/home/books/the-pragmatic-shelf/</link>
+				<pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/books/the-pragmatic-shelf/</guid>
+				<description>&lt;p&gt;A finished book with a full rating and a Goodreads link. The cover, the stars, the&#xA;facts list and the link all sit in the column a post would use for its table of&#xA;contents, and your notes run full width underneath.&lt;/p&gt;&#xA;&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;a class=&#34;heading-anchor&#34; href=&#34;#notes&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Headings work in book notes exactly as they do in a post, so a long set of notes&#xA;can be structured rather than one block of prose.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Notes on Simplicity</title>
+				<link>http://localhost:1313/home/books/notes-on-simplicity/</link>
+				<pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/books/notes-on-simplicity/</guid>
+				<description>&lt;p&gt;Three stars out of five, no ISBN and no Goodreads link — so this page shows the&#xA;partial star row and the shorter facts list you get when you only fill in what you&#xA;actually know.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

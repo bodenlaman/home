@@ -1,0 +1,9 @@
+baseURL = 'https://bodenlaman.github.io/home/'
+languageCode = 'en-us'
+title = 'Boden Laman Portfolio'
+theme = "nuno"
+[params]
+  mainSections = ["posts"]
+  
+[markup.goldmark.renderer]
+  unsafe = true

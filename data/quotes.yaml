@@ -1,0 +1,13 @@
+# Lines cycled by the typed masthead on the home page.
+#
+# `pre`    renders in --ink (the body text colour)
+# `accent` renders in --accent (the one accent colour)
+# "\n"     forces a line break; a trailing space keeps the line running on
+#
+# These are placeholders. Override them by creating data/quotes.yaml in your own
+# site root — your file replaces this one wholesale, it does not merge into it.
+lines:
+  - pre: "Currently working on:\n"
+    accent: "Homelab maintenance :/"
+  - pre: "Open Source Site.\n"
+    accent: "No third-party requests."

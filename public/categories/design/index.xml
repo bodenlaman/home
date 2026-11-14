@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Design on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/categories/design/</link>
+		<description>Recent content in Design on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/design/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Welcome to nuno</title>
+				<link>http://localhost:1313/posts/welcome-to-nuno/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/welcome-to-nuno/</guid>
+				<description>&lt;p&gt;nuno is a Hugo theme for people who write. It has one typeface, four palettes,&#xA;a single accent colour, and no third-party requests at all. The home page you&#xA;arrived on is the whole design argument: a masthead that types itself, a column&#xA;of numbered cards, and nothing else competing for attention.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-you-get&#34;&gt;What you get&lt;a class=&#34;heading-anchor&#34; href=&#34;#what-you-get&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;The parts worth knowing about, in rough order of how often you will touch them:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Four Palettes, One Accent</title>
+				<link>http://localhost:1313/posts/four-palettes-one-accent/</link>
+				<pubDate>Sat, 18 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/four-palettes-one-accent/</guid>
+				<description>&lt;p&gt;The theme has two colour switches and they are independent of each other. That is&#xA;the only unusual thing about its palette system, and it is worth five minutes of&#xA;explanation because almost every customisation question turns out to be about it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-two-switches&#34;&gt;The two switches&lt;a class=&#34;heading-anchor&#34; href=&#34;#the-two-switches&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Theme&lt;/strong&gt; is &lt;code&gt;light&lt;/code&gt; or &lt;code&gt;dark&lt;/code&gt;, toggled by the ☾/☀ button in the nav. &lt;strong&gt;Ground&lt;/strong&gt;&#xA;is &lt;code&gt;brown&lt;/code&gt; or &lt;code&gt;green&lt;/code&gt;, toggled from the footer. Neither knows about the other, so&#xA;the combinations are:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

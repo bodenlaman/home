@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Writing on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/home/posts/</link>
+		<description>Recent content in Writing on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/home/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>SafeBite - Prototype &amp; Development Process</title>
+				<link>http://localhost:1313/home/posts/safebite/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/posts/safebite/</guid>
+				<description>&lt;h2 id=&#34;introducing-safebite&#34;&gt;Introducing SafeBite&lt;a class=&#34;heading-anchor&#34; href=&#34;#introducing-safebite&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Encountered an allergen at a restaurant? Save it to your places in SafeBtie and let others know about it!&#xA;&lt;figure&gt;&lt;img src=&#34;SafeBiteHomeUpper.png&#34; alt=&#34;SafeBite Home Screen&#34; width=&#34;250&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34;&gt;&lt;figcaption&gt;SafeBite Home Screen&lt;/figcaption&gt;&lt;/figure&gt;&#xA;&lt;aside class=&#34;callout callout--note&#34;&gt;&#xA;  &lt;span class=&#34;callout__icon&#34; aria-hidden=&#34;true&#34;&gt;i&lt;/span&gt;&#xA;  &lt;span class=&#34;callout__text&#34;&gt;&#xA;    &lt;span class=&#34;callout__label&#34;&gt;Note&lt;/span&gt;&#xA;    &lt;span class=&#34;callout__body&#34;&gt;&lt;p&gt;Supported Devices: iPhone 8 / iPhone 8 Plus or newer; iPhone X or newer&lt;/p&gt;&#xA;&lt;p&gt;While a working concept of this app exists; it remains in a prototype stage. Read more about the development process and motivations towards this product!&lt;/p&gt;&#xA;&lt;/span&gt;&#xA;  &lt;/span&gt;&#xA;&lt;/aside&gt;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Videography</title>
+				<link>http://localhost:1313/home/posts/videography/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/posts/videography/</guid>
+				<description>&lt;h2 id=&#34;looking-for-a-highlight-video&#34;&gt;Looking for a Highlight Video?&lt;a class=&#34;heading-anchor&#34; href=&#34;#looking-for-a-highlight-video&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Fill out the form below to get started. Highlight videos are montage reels made from various action shots of an athlete. Check out the examples below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;watch-an-example&#34;&gt;Watch an example&lt;a class=&#34;heading-anchor&#34; href=&#34;#watch-an-example&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;aside class=&#34;callout callout--note&#34;&gt;&#xA;  &lt;span class=&#34;callout__icon&#34; aria-hidden=&#34;true&#34;&gt;i&lt;/span&gt;&#xA;  &lt;span class=&#34;callout__text&#34;&gt;&#xA;    &lt;span class=&#34;callout__label&#34;&gt;Note&lt;/span&gt;&#xA;    &lt;span class=&#34;callout__body&#34;&gt;&lt;p&gt;Watch an example video made for a Field Hockey Goalie in 2022. Submitted clips can be zoomed in, cropped, slowed down and more.&lt;/p&gt;&#xA;&lt;iframe title=&#34;McKenna Laman - 2022 GK - Fall 2019 HS Compilation (mckennajaye@gmail.com)&#34; width=&#34;500&#34; height=&#34;281&#34; src=&#34;https://www.youtube.com/embed/p5EdIyL_1Mw?feature=oembed&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen=&#34;&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/span&gt;&#xA;  &lt;/span&gt;&#xA;&lt;/aside&gt;&#xA;&#xA;&lt;h2 id=&#34;steps-required&#34;&gt;Steps Required&lt;a class=&#34;heading-anchor&#34; href=&#34;#steps-required&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;collect-your-clips&#34;&gt;Collect your clips&lt;a class=&#34;heading-anchor&#34; href=&#34;#collect-your-clips&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;Download or timestamp specific clips and provide access to them. Archives of public live streams and self recorded content is typically highest quality, screen recording reduces quality.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>SnapSweeper - Prototype &amp; Development Process</title>
+				<link>http://localhost:1313/home/posts/snapsweeper/</link>
+				<pubDate>Sat, 18 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/posts/snapsweeper/</guid>
+				<description>&lt;figure&gt;&lt;img src=&#34;snapsweeperHS.png&#34; alt=&#34;SafeBite Home Screen&#34; width=&#34;250&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34;&gt;&lt;figcaption&gt;SafeBite Home Screen&lt;/figcaption&gt;&lt;/figure&gt;&#xA;&lt;h2 id=&#34;snapsweeper-design&#34;&gt;SnapSweeper Design&lt;a class=&#34;heading-anchor&#34; href=&#34;#snapsweeper-design&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;h1 id=&#34;photos-videos-it-all-adds-up-keep-swiping-and-earn-achievements&#34;&gt;Photos. Videos. It All Adds Up. Keep Swiping and Earn Achievements.&lt;a class=&#34;heading-anchor&#34; href=&#34;#photos-videos-it-all-adds-up-keep-swiping-and-earn-achievements&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;PhotoSwipe provides an easy to use interface, showing you where you have the most media and helping you declutter fast. As you continue to use SnapSweeper, you’ll unlock more achievements. Keep exploring the app to find more!&#xA;&lt;figure&gt;&lt;img src=&#34;snapsweeperAchievements.png&#34; alt=&#34;SnapSweeper Achievements Screen&#34; width=&#34;500&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34;&gt;&lt;figcaption&gt;SnapSweeper Achievements Screen&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;photoswipe&#34;&gt;PhotoSwipe&lt;a class=&#34;heading-anchor&#34; href=&#34;#photoswipe&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Featured in SnapSweeper, &lt;code&gt;PhotoSwipe&lt;/code&gt; allows you to act fast on your photo library. Swipe left to mark an item for deletion. A swipe in the right direction moves on to the next piece. Take advantage of the beautiful Liquid Glass redesign available on devices running iOS 26 or later.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

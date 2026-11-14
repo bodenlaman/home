@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Certifications on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/home/certs/</link>
+		<description>Recent content in Certifications on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/home/certs/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Example Professional Certification</title>
+				<link>http://localhost:1313/home/certs/example-professional/</link>
+				<pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/certs/example-professional/</guid>
+				<description>&lt;p&gt;The body of a certification page is ordinary Markdown, so this is the place for&#xA;what the credential actually meant rather than what the syllabus said.&lt;/p&gt;&#xA;&lt;p&gt;Everything else on this page — the issuer kicker, the badge, the dates, the facts&#xA;list and the verify button — comes from the &lt;code&gt;certMeta&lt;/code&gt; block in the front matter.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Example Associate Certification</title>
+				<link>http://localhost:1313/home/certs/example-associate/</link>
+				<pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/certs/example-associate/</guid>
+				<description>&lt;p&gt;This one has no &lt;code&gt;expiryDate&lt;/code&gt;, so the Expires row is simply absent — every fact in&#xA;the list is optional and disappears when you omit it.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Example Foundations Certification</title>
+				<link>http://localhost:1313/home/certs/example-foundations/</link>
+				<pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/certs/example-foundations/</guid>
+				<description>&lt;p&gt;A second issuer, so the list page has two groups to sort. Issuers are ordered by&#xA;their most recent credential, which puts the track you are actively certifying on&#xA;above the ones you have moved past.&lt;/p&gt;&#xA;&lt;p&gt;This credential is also marked &lt;code&gt;Expired&lt;/code&gt; and has no &lt;code&gt;credentialUrl&lt;/code&gt;, so it loses&#xA;the accent status pill and the verify button.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

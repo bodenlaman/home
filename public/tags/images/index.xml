@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Images on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/tags/images/</link>
+		<description>Recent content in Images on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 20 May 2026 09:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/images/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Image Pipeline</title>
+				<link>http://localhost:1313/posts/the-image-pipeline/</link>
+				<pubDate>Mon, 02 Mar 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/the-image-pipeline/</guid>
+				<description>&lt;p&gt;Of everything the theme does for performance, the image pipeline earns the most.&#xA;One post in early testing went from 2.5 MB and a 12.9 second load to 118 KB and&#xA;533 ms, and nothing changed about it except how the images were processed.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-happens-to-an-image&#34;&gt;What happens to an image&lt;a class=&#34;heading-anchor&#34; href=&#34;#what-happens-to-an-image&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Write an ordinary Markdown image and a render hook intercepts it:&lt;/p&gt;&#xA;&lt;div class=&#34;code&#34;&gt;&#xA;  &lt;div class=&#34;code__bar&#34;&gt;&#xA;    &lt;span&gt;markdown&lt;/span&gt;&#xA;    &lt;button class=&#34;code__copy&#34; type=&#34;button&#34; data-nuno-copy aria-label=&#34;Copy code to clipboard&#34;&gt;Copy&lt;/button&gt;&#xA;  &lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![&lt;span style=&#34;color:#f92672&#34;&gt;A build-time processed image&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;images/example-figure.png&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/example-figure.png&#34; alt=&#34;A build-time processed image&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34;&gt;&#xA;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

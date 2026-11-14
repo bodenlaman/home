@@ -1,0 +1,3 @@
+[submodule "themes/nuno"]
+	path = themes/nuno
+	url = https://github.com/that-daniel/nuno.git

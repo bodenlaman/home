@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Boden Laman Portfolio</title>
+		<link>http://localhost:1313/home/tags/</link>
+		<description>Recent content in Tags on Boden Laman Portfolio</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/home/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Design</title>
+				<link>http://localhost:1313/home/tags/design/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/design/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Getting Started</title>
+				<link>http://localhost:1313/home/tags/getting-started/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/getting-started/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>http://localhost:1313/home/tags/hugo/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/hugo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Videography</title>
+				<link>http://localhost:1313/home/tags/videography/</link>
+				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/videography/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Concept</title>
+				<link>http://localhost:1313/home/tags/concept/</link>
+				<pubDate>Sat, 18 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/concept/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Photography</title>
+				<link>http://localhost:1313/home/tags/photography/</link>
+				<pubDate>Sat, 18 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/photography/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

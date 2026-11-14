@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{- $s := .Site -}}
+{{- $sections := $s.Params.mainSections | default (slice "posts") -}}
+{{- $posts := where $s.RegularPages "Type" "in" $sections -}}
+{{- $n := int ($s.Params.postsOnHome | default 6) -}}
+
+{{- /* postsOnHomeMax renders further posts that a "Show more" button reveals in
+       place — the middle ground between a short home page and the full archive,
+       without a second request.
+
+       Leave it unset (or at or below postsOnHome) and nothing changes. The
+       extras are rendered visible and JavaScript hides them, not the other way
+       round, so a reader without JavaScript gets more posts rather than a
+       button that does nothing. */ -}}
+{{- $max := int ($s.Params.postsOnHomeMax | default $n) -}}
+{{- if lt $max $n }}{{ $max = $n }}{{ end -}}
+{{- $recent := first $max $posts -}}
+
+{{- /* Two independent switches, the same shape as theme × ground: the header
+       and the post list vary separately, so four home pages come out of two
+       params. Unknown values warn and fall back rather than rendering an empty
+       page — a typo in hugo.toml should cost a warning, not the home. */ -}}
+{{- $headers := slice "masthead" "profile" -}}
+{{- $header := $s.Params.homeHeader | default "masthead" -}}
+{{- if not (in $headers $header) -}}
+  {{- warnf "nuno: unknown params.homeHeader %q, falling back to \"masthead\" (one of: %s)" $header (delimit $headers ", ") -}}
+  {{- $header = "masthead" -}}
+{{- end -}}
+
+{{- $styles := slice "grid" "ledger" -}}
+{{- $style := $s.Params.homeStyle | default "grid" -}}
+{{- if not (in $styles $style) -}}
+  {{- warnf "nuno: unknown params.homeStyle %q, falling back to \"grid\" (one of: %s)" $style (delimit $styles ", ") -}}
+  {{- $style = "grid" -}}
+{{- end -}}
+
+{{- /* Where "Archive · N" points. Prefer a real /archives/ page. */ -}}
+{{- $archive := "" -}}
+{{- with $s.GetPage "/archives" }}{{ $archive = .RelPermalink }}{{ else }}
+  {{- with $s.GetPage (printf "/%s" (index $sections 0)) }}{{ $archive = .RelPermalink }}{{ end -}}
+{{- end -}}
+
+{{ partial (printf "home/header-%s.html" $header) . }}
+
+<h1>Student | Developer | Photographer | Video Editor <br/>Wentworth Institute of Technology </h1>
+<h3>As a Computer Science and Society student, I am interested in exploring the intersection of technology, application development, and user experience. I particularly enjoy taking ideas and turning them 
+into functional applications and prototypes, exploring how different technologies, designs and interfaces work together, 
+and troubleshooting challenges along the way. Through my personal development projects, technical interests, and experience in digital accessibility, 
+I have developed a well-rounded understanding of how technology can be designed and implemented to better serve its users.
+I am eager to bring my technical curiosity, creative problem-solving abilities, 
+and collaborative approaches to a new team as I search for my next co-op (Jan - April 2027)</h3>
+
+<main id="main" class="section">
+
+
+  <div class="section__head">
+    <span class="kicker">{{ i18n "recentWriting" }}</span>
+    {{- with $archive }}
+      <a class="kicker kicker--accent section__head-archive" href="{{ . }}">{{ i18n "archiveCount" (dict "count" (len $posts)) }}</a>
+    {{- end }}
+  </div>
+
+  {{ partial (printf "home/%s.html" $style) (dict "recent" $recent "archive" $archive "page" . "visible" $n) }}
+
+  {{- if gt (len $recent) $n }}
+    <button class="show-more" type="button" data-nuno-show-more hidden>{{ i18n "showMore" }}</button>
+  {{- end }}
+
+  {{- with $archive }}
+    <a class="archive-link" href="{{ . }}">{{ i18n "archiveCountArrow" (dict "count" (len $posts)) }}</a>
+  {{- end }}
+</main>
+{{ end }}
