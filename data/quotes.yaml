@@ -8,6 +8,8 @@
 # site root — your file replaces this one wholesale, it does not merge into it.
 lines:
   - pre: "Currently working on:\n"
-    accent: "Homelab maintenance :/"
-  - pre: "Open Source Site.\n"
-    accent: "No third-party requests."
+    accent: "This new website!"
+  - pre: "Hello world.\n"
+    accent: "(say it back!)"
+  - pre: "don't mind the bugs\n"
+    accent: "(under construction!!)"
