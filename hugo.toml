@@ -1,6 +1,6 @@
 baseURL = 'https://bodenlaman.github.io/home/'
 languageCode = 'en-us'
-title = 'Boden Laman Portfolio'
+title = 'Boden Laman'
 theme = "nuno"
 [params]
   mainSections = ["posts"]
