@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Linux on Boden Laman Portfolio</title>
-		<link>http://localhost:1313/tags/linux/</link>
-		<description>Recent content in Linux on Boden Laman Portfolio</description>
+		<title>Linux on Boden Laman</title>
+		<link>http://localhost:1313/home/tags/linux/</link>
+		<description>Recent content in Linux on Boden Laman</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
 		
 		
 		
 		
-			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 31 Dec 1969 19:33:46 -0500</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/home/tags/linux/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Homelab</title>
-				<link>http://localhost:1313/posts/homelab/</link>
-				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/posts/homelab/</guid>
-				<description>&lt;h2 id=&#34;looking-for-a-highlight-video&#34;&gt;Looking for a Highlight Video?&lt;a class=&#34;heading-anchor&#34; href=&#34;#looking-for-a-highlight-video&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Fill out the form below to get started. Highlight videos are montage reels made from various action shots of an athlete. Check out the examples below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;watch-an-example&#34;&gt;Watch an example&lt;a class=&#34;heading-anchor&#34; href=&#34;#watch-an-example&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;aside class=&#34;callout callout--note&#34;&gt;&#xA;  &lt;span class=&#34;callout__icon&#34; aria-hidden=&#34;true&#34;&gt;i&lt;/span&gt;&#xA;  &lt;span class=&#34;callout__text&#34;&gt;&#xA;    &lt;span class=&#34;callout__label&#34;&gt;Note&lt;/span&gt;&#xA;    &lt;span class=&#34;callout__body&#34;&gt;&lt;p&gt;Watch an example video made for a Field Hockey Goalie in 2022. Submitted clips can be zoomed in, cropped, slowed down and more.&lt;/p&gt;&#xA;&lt;iframe title=&#34;McKenna Laman - 2022 GK - Fall 2019 HS Compilation (mckennajaye@gmail.com)&#34; width=&#34;500&#34; height=&#34;281&#34; src=&#34;https://www.youtube.com/embed/p5EdIyL_1Mw?feature=oembed&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen=&#34;&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/span&gt;&#xA;  &lt;/span&gt;&#xA;&lt;/aside&gt;&#xA;&#xA;&lt;h2 id=&#34;steps-required&#34;&gt;Steps Required&lt;a class=&#34;heading-anchor&#34; href=&#34;#steps-required&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;collect-your-clips&#34;&gt;Collect your clips&lt;a class=&#34;heading-anchor&#34; href=&#34;#collect-your-clips&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;Download or timestamp specific clips and provide access to them. Archives of public live streams and self recorded content is typically highest quality, screen recording reduces quality.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+				<link>http://localhost:1313/home/posts/homelab/</link>
+				<pubDate>Wed, 31 Dec 1969 19:33:46 -0500</pubDate>
+				<guid>http://localhost:1313/home/posts/homelab/</guid>
+				<description>&lt;h2 id=&#34;the-inspiration&#34;&gt;The Inspiration&lt;a class=&#34;heading-anchor&#34; href=&#34;#the-inspiration&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;After experiencing one too many &amp;ldquo;You&amp;rsquo;re away from home&amp;rdquo; and other related errors from streaming services, I finally decided to hop into the world of self-hosting a Jellyfin server.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-it-was-built&#34;&gt;How it was Built&lt;a class=&#34;heading-anchor&#34; href=&#34;#how-it-was-built&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;aside class=&#34;callout callout--note&#34;&gt;&#xA;  &lt;span class=&#34;callout__icon&#34; aria-hidden=&#34;true&#34;&gt;i&lt;/span&gt;&#xA;  &lt;span class=&#34;callout__text&#34;&gt;&#xA;    &lt;span class=&#34;callout__label&#34;&gt;Note&lt;/span&gt;&#xA;    &lt;span class=&#34;callout__body&#34;&gt;&lt;p&gt;Watch an example video made for a Field Hockey Goalie in 2022. Submitted clips can be zoomed in, cropped, slowed down and more.&lt;/p&gt;&#xA;&lt;iframe title=&#34;McKenna Laman - 2022 GK - Fall 2019 HS Compilation (mckennajaye@gmail.com)&#34; width=&#34;500&#34; height=&#34;281&#34; src=&#34;https://www.youtube.com/embed/p5EdIyL_1Mw?feature=oembed&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen=&#34;&#34;&gt;&lt;/iframe&gt;&#xA;&lt;/span&gt;&#xA;  &lt;/span&gt;&#xA;&lt;/aside&gt;&#xA;&#xA;&lt;h2 id=&#34;troubleshooting-and-hardships&#34;&gt;Troubleshooting and hardships&lt;a class=&#34;heading-anchor&#34; href=&#34;#troubleshooting-and-hardships&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;Storage is expensive!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
 			</item>
 	</channel>
 </rss>

@@ -1,9 +1,9 @@
 ---
 title: "Videography"
 description: "App Concept: Find restaurants and meals that are safe for you."
-date: 2026-05-04T09:00:00Z
-categories: ["App Concept"]
-series: ["App Concepts and Development"]
+date: 2022-01-01T00:00:00Z
+categories: ["Paid Service"]
+series: ["Services"]
 seriesOrder: 1
 tags: ["Design", "Videography"]
 ---
@@ -15,13 +15,12 @@ Fill out the form below to get started. Highlight videos are montage reels made 
 ## Watch an example
 {{< callout type="note" >}}
 Watch an example video made for a Field Hockey Goalie in 2022. Submitted clips can be zoomed in, cropped, slowed down and more.
-<iframe title="McKenna Laman - 2022 GK - Fall 2019 HS Compilation (mckennajaye@gmail.com)" width="500" height="281" src="https://www.youtube.com/embed/p5EdIyL_1Mw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<iframe title="McKenna Laman - 2022 GK - Fall 2019 HS Compilation (mckennajaye@gmail.com)" src="https://www.youtube.com/embed/p5EdIyL_1Mw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 {{< /callout >}}
 
 ## Steps Required
 ## Collect your clips
 > Download or timestamp specific clips and provide access to them. Archives of public live streams and self recorded content is typically highest quality, screen recording reduces quality.
-
 ## Pick a Song
 >Decide on a song to use. Most highlight videos have pump up music which is normally electronic, DJ, etc. Can’t find a song? Fear not! Suggestions are always provided!
 
