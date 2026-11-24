@@ -28,7 +28,10 @@ SnapSweeper displays your photos in a card-like fashion, swiping to the left mar
 When I started to design SnapSweeper, I knew that as a photo manager, users would also want to quickly view statistics regarding how much of what type of content are stored in their camera roll. After various redesigns, I decided to emphasize these options by creating a single main page, with buttons to select media types like 'live photos' and 'videos', displaying the current count of that media type.
 
 <!--
+# SwiftUI Saves the Day
+
 # PhotoSwipe - Design
-Stumped and feeling overwhelmed by my large photo library, I knew that I needed a design that would allow me to quickly make decisions on what I wanted to keep.   
+Stumped and feeling overwhelmed by my large photo library, I knew that I needed a design that would allow me to quickly make decisions on what I wanted to keep.
 
 -->
+

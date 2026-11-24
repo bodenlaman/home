@@ -10,14 +10,28 @@
 		
 		
 		
-			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 01 Apr 2026 09:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/home/categories/index.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>Projects</title>
+				<link>http://localhost:1313/home/categories/projects/</link>
+				<pubDate>Wed, 01 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/categories/projects/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>App Concept</title>
 				<link>http://localhost:1313/home/categories/app-concept/</link>
-				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
+				<pubDate>Wed, 31 Dec 2025 09:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/home/categories/app-concept/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Paid Service</title>
+				<link>http://localhost:1313/home/categories/paid-service/</link>
+				<pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/categories/paid-service/</guid>
 				<description></description>
 			</item>
 	</channel>

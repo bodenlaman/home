@@ -10,49 +10,56 @@
 		
 		
 		
-			<lastBuildDate>Mon, 04 May 2026 09:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 01 Apr 2026 09:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/home/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Design</title>
-				<link>http://localhost:1313/home/tags/design/</link>
-				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/home/tags/design/</guid>
+				<title>IT</title>
+				<link>http://localhost:1313/home/tags/it/</link>
+				<pubDate>Wed, 01 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/it/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>Getting Started</title>
-				<link>http://localhost:1313/home/tags/getting-started/</link>
-				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/home/tags/getting-started/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Hugo</title>
-				<link>http://localhost:1313/home/tags/hugo/</link>
-				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/home/tags/hugo/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Videography</title>
-				<link>http://localhost:1313/home/tags/videography/</link>
-				<pubDate>Mon, 04 May 2026 09:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/home/tags/videography/</guid>
+				<title>Linux</title>
+				<link>http://localhost:1313/home/tags/linux/</link>
+				<pubDate>Wed, 01 Apr 2026 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/linux/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Concept</title>
 				<link>http://localhost:1313/home/tags/concept/</link>
-				<pubDate>Sat, 18 Apr 2026 09:00:00 +0000</pubDate>
+				<pubDate>Wed, 31 Dec 2025 09:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/home/tags/concept/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Design</title>
+				<link>http://localhost:1313/home/tags/design/</link>
+				<pubDate>Wed, 31 Dec 2025 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/design/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Photography</title>
 				<link>http://localhost:1313/home/tags/photography/</link>
-				<pubDate>Sat, 18 Apr 2026 09:00:00 +0000</pubDate>
+				<pubDate>Wed, 31 Dec 2025 09:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/home/tags/photography/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dining</title>
+				<link>http://localhost:1313/home/tags/dining/</link>
+				<pubDate>Tue, 31 Dec 2024 09:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/dining/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Videography</title>
+				<link>http://localhost:1313/home/tags/videography/</link>
+				<pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/home/tags/videography/</guid>
 				<description></description>
 			</item>
 	</channel>

@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary">
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-01T09:00:00Z","datePublished":"2026-04-01T09:00:00Z","description":"Upcycling a Lenovo Thinkcentre and remotely managing it 250+ miles away","headline":"Homelab","keywords":"IT, linux","mainEntityOfPage":{"@id":"http://localhost:1313/home/posts/homelab/","@type":"WebPage"},"publisher":{"@type":"Organization","name":"Boden Laman","url":"http://localhost:1313/home/"},"timeRequired":"PT1M","url":"http://localhost:1313/home/posts/homelab/"}</script><script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-01T09:00:00Z","datePublished":"2026-04-01T09:00:00Z","description":"Upcycling a Lenovo Thinkcentre and remotely managing it 250+ miles away","headline":"Homelab","keywords":"IT, linux","mainEntityOfPage":{"@id":"http://localhost:1313/home/posts/homelab/","@type":"WebPage"},"publisher":{"@type":"Organization","name":"Boden Laman","url":"http://localhost:1313/home/"},"timeRequired":"PT3M","url":"http://localhost:1313/home/posts/homelab/"}</script><script>
 (function(){var d=document.documentElement,s;try{s=localStorage}catch(e){}
 var t=s&&s.getItem('nuno-theme'),g=s&&s.getItem('nuno-ground'),f="auto";
 if(t!=='light'&&t!=='dark'){t=(f==='light'||f==='dark')?f:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}
@@ -48,7 +48,7 @@ d.setAttribute('data-theme',t);d.setAttribute('data-ground',g);d.style.colorSche
       <span class="kicker kicker--accent">Projects</span>
     <h1 class="post__title">Homelab</h1><p class="post__subtitle">Upcycling a Lenovo Thinkcentre and remotely managing it 250&#43; miles away</p>
   </div><div class="post__meta">
-    <span>April 1, 2026</span><span>1 min read</span>
+    <span>April 1, 2026</span><span>3 min read</span>
   </div>
 </header>
 
@@ -59,21 +59,52 @@ d.setAttribute('data-theme',t);d.setAttribute('data-ground',g);d.style.colorSche
   <article class="prose" id="main">
     <h2 id="the-inspiration">The Inspiration<a class="heading-anchor" href="#the-inspiration" aria-label="Link to this section"></a></h2>
 <p>After experiencing one too many &ldquo;You&rsquo;re away from home&rdquo; and other related errors from streaming services, I finally decided to hop into the world of self-hosting a Jellyfin server.</p>
-<h2 id="how-it-was-built">How it was Built<a class="heading-anchor" href="#how-it-was-built" aria-label="Link to this section"></a></h2>
+<h2 id="my-goals">My Goals<a class="heading-anchor" href="#my-goals" aria-label="Link to this section"></a></h2>
 <aside class="callout callout--note">
   <span class="callout__icon" aria-hidden="true">i</span>
   <span class="callout__text">
     <span class="callout__label">Note</span>
-    <span class="callout__body"><p>This mini pc</p>
+    <span class="callout__body"><p>The criteria for this project:</p>
+<ul>
+<li>Easily stream movies and tv shows to a plethora of devices, and through a domain that is publicly accessible.</li>
+<li>Automatically back up and sync all of my photos, from my DSLR camera to my iPhone, in one easily accessible website.</li>
+<li>Versatility: The ability to add services as needed, such as a Minecraft Java server, or a remote web instance of Chromium, for protected internet browsing.</li>
+</ul>
 </span>
   </span>
 </aside>
 
-<p>This is how I built it,</p>
+<h2 id="the-workflow">The workflow<a class="heading-anchor" href="#the-workflow" aria-label="Link to this section"></a></h2>
+<p>One aspect of this project that I wanted to emphasize, was uptime, reliability, and also lower power consumption. Since the main hardware is a mini-pc, the CPU (AMD Ryzen XXX) already uses less power than a typical computer and server. This allowed me to take advantage of various UEFI/ Firmware settings to ensure that if the system crashes, loses power, or runs into any other issue, it will recover itself.</p>
+<h2 id="whats-operational">What&rsquo;s operational<a class="heading-anchor" href="#whats-operational" aria-label="Link to this section"></a></h2>
+<blockquote><p>Despite some intermittent downtime, the following services have been tested and work under various scenarios (streaming content from various locations, photo backups over 5G Cellular, etc.)</p>
+</blockquote>
+<hr>
+<h2 id="media--streaming">Media &amp; Streaming<a class="heading-anchor" href="#media--streaming" aria-label="Link to this section"></a></h2>
+<ol>
+<li>Jellyfin</li>
+</ol>
+<ul>
+<li>Similar to Netflix, and other streaming services. Allows public access through website or app, with user profiles, media requesting, and more.</li>
+</ul>
+<p>1.1 ersatzTV (legacy)</p>
+<ul>
+<li>ersatzTV is a handy plugin that lets lets a user create custom ITPV channels based off of their local media library. For my homelab, this allows me to create an &ldquo;all-in-one&rdquo; type of service, with on-demand movies, but also custom channels that can play a mix of series and moves based on their studio, release date, genre, or anything in between!</li>
+</ul>
+<h2 id="photo-backup--file-management">Photo Backup &amp; File Management<a class="heading-anchor" href="#photo-backup--file-management" aria-label="Link to this section"></a></h2>
+<ol start="2">
+<li>Immich</li>
+</ol>
+<ul>
+<li>Immich is an open-source alternative to Google or iCloud photos, with a design similar to the former. Once your domain is setup, you can download the mobile app or type in photos.[yoursite].com to access your entire camera roll, make edits, download, or upload content.</li>
+</ul>
 <h2 id="troubleshooting-and-hardships">Troubleshooting and hardships<a class="heading-anchor" href="#troubleshooting-and-hardships" aria-label="Link to this section"></a></h2>
 <blockquote><p>Storage is expensive!</p>
 </blockquote>
-<p>One major challenge that I faced and continue to face throughout this project is finding parts. Due to the Lenovo ThinkCentre being a mini-pc, there&rsquo;s only one full size SATA port and one NVME slot on the motherboard. That meant almost all of my external storage would have to come from the USB ports. Luckily the ThinkCentre has six 3.0 ports, allowing me to find a second-hand SATA-RAID system.</p>
+<p>One major challenge that I faced and continue to face throughout this project is finding parts. Due to the Lenovo ThinkCentre being a mini-pc, there&rsquo;s only one full size SATA port and one NVME slot on the motherboard. That meant almost all of my external storage would have to come from the USB ports. Luckily the ThinkCentre has six 3.0 ports, allowing me to find a second-hand SATA-RAID system and install ~3.5 TB of space.s</p>
+<blockquote><p>The homelab doesn&rsquo;t appear to be able to recover itself?</p>
+</blockquote>
+<p>Another major challenge that I&rsquo;m still troubleshooting, is a cold boot. Either due to a firmware issue or boot configuration error, the Thinkcentre will hang at the Lenovo logo and not proceed with the boot process.</p>
 
   </article>
   <aside class="post__aside">
@@ -81,7 +112,11 @@ d.setAttribute('data-theme',t);d.setAttribute('data-ground',g);d.style.colorSche
     <div class="toc" data-nuno-toc><nav id="TableOfContents">
   <ul>
     <li><a href="#the-inspiration">The Inspiration</a></li>
-    <li><a href="#how-it-was-built">How it was Built</a></li>
+    <li><a href="#my-goals">My Goals</a></li>
+    <li><a href="#the-workflow">The workflow</a></li>
+    <li><a href="#whats-operational">What&rsquo;s operational</a></li>
+    <li><a href="#media--streaming">Media &amp; Streaming</a></li>
+    <li><a href="#photo-backup--file-management">Photo Backup &amp; File Management</a></li>
     <li><a href="#troubleshooting-and-hardships">Troubleshooting and hardships</a></li>
   </ul>
 </nav></div>
